@@ -1,0 +1,24 @@
+{
+  "infoList": [
+    {
+      "panelTypeString": "Message",
+      "path": "UI/UIPanel/MessagePanel"
+    },
+    {
+      "panelTypeString": "Login",
+      "path": "UI/UIPanel/LoginPanel"
+    },
+    {
+      "panelTypeString": "Menu",
+      "path": "UI/UIPanel/MenuPanel"
+    },
+    {
+      "panelTypeString": "Rank",
+      "path": "UI/UIPanel/RankPanel"
+    },
+    {
+      "panelTypeString": "Game",
+      "path": "UI/UIPanel/GamePanel"
+    }
+  ]
+}
