@@ -1,0 +1,8 @@
+[2018-12-09 14:13:52] 1 disconnected reason is recvfail
+[2018-12-09 14:29:07] 3 disconnected reason is recvfail
+[2018-12-09 14:45:10] 10 disconnected reason is recvfail
+[2018-12-09 14:52:16] 2 disconnected reason is recvfail
+[2018-12-09 15:47:01] 8 disconnected reason is recvfail
+[2018-12-09 16:51:35] 7 disconnected reason is recvfail
+[2018-12-09 16:52:21] 9 disconnected reason is recvfail
+[2018-12-09 18:08:44] 2 disconnected reason is recvfail
