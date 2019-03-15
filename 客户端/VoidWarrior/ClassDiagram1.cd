@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Actions">
+    <Position X="29.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAACEAgAAAAAAAACAAAAAAIBAIAAwAAAAAAAAAEI=</HashCode>
+      <FileName>Assets\Resources\Role\Yurowm\Demo\Scripts\Actions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterPanel">
+    <Position X="25.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAwIAAAAAKAQASEAAAAAQAAgABACQBAAAAAAABACAAA=</HashCode>
+      <FileName>Assets\Resources\Role\Yurowm\Demo\Scripts\CharacterPanel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="actions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CharacterViewer">
+    <Position X="27.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgggAAAACAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Resources\Role\Yurowm\Demo\Scripts\CharacterViewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController">
+    <Position X="32" Y="17" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="PlayerController.Arsenal">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Resources\Role\Yurowm\Demo\Scripts\PlayerController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>DAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAQAAAAAAEA=</HashCode>
+      <FileName>Assets\Resources\Role\Yurowm\Demo\Scripts\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestroyForTime">
+    <Position X="31.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\DestroyForTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UGUISpriteAnimation">
+    <Position X="33.75" Y="11.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQhAAAICCABAAAAAAEAAEARABQAAAACsAAAAAwAAEA=</HashCode>
+      <FileName>Assets\Scripts\Common\UGUISpriteAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraController">
+    <Position X="29.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAQAUAIACAIAAgEEIAAAAAAIBSAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Camera\CameraController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JFConst">
+    <Position X="34.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Camera\JFConst.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletController">
+    <Position X="30" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAACAAAAAAAgAAAAAAAAAAAQAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Game\BulletController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestinationController">
+    <Position X="34.25" Y="17" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Game\DestinationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameController">
+    <Position X="5" Y="9.5" Width="1.5" />
+    <AssociationLine Name="submitRequest" Type="SubmitRequest" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.938" Y="12.796" />
+        <Point X="5.938" Y="13.438" />
+        <Point X="18.25" Y="13.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAGAAAAAAAAAJAAAAAAAAgABBJIAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Game\GameController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gamePanel" />
+      <Field Name="submitRequest" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RoleController">
+    <Position X="13.25" Y="14.25" Width="1.5" />
+    <AssociationLine Name="gameController" Type="GameController" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.156" Y="14.25" />
+        <Point X="14.156" Y="13.645" />
+        <Point X="5.375" Y="13.645" />
+        <Point X="5.375" Y="12.796" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAQCgAAAEKgIhQASAAAQAAoQAACIAQgAQAASAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Game\RoleController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currRoleAI" />
+      <Field Name="currRoleFSMMng" />
+      <Field Name="currRoleType" />
+      <Field Name="currRoleInfo" />
+      <Field Name="gameController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameSceneController">
+    <Position X="33" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\GameSceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InitSceneController">
+    <Position X="29.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\InitSceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadingSceneController">
+    <Position X="33" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>oQQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\LoadingSceneController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_LoadingSliderControl" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LoadingSliderControl">
+    <Position X="33" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\LoadingSliderControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginSceneController">
+    <Position X="29.75" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\LoginSceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuSceneController">
+    <Position X="33" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller\Scene\MenuSceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFacade">
+    <Position X="27" Y="1.25" Width="1.5" />
+    <AssociationLine Name="_instance" Type="GameFacade" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.312" Y="1.25" />
+        <Point X="28.312" Y="1" />
+        <Point X="27.978" Y="1" />
+        <Point X="27.978" Y="1.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.608" Y="0.306" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="sceneMng" Type="SceneManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="8.312" />
+        <Point X="23" Y="8.312" />
+        <Point X="23" Y="5.754" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="uiMng" Type="UIManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27.188" Y="9.044" />
+        <Point X="27.188" Y="9.188" />
+        <Point X="14.5" Y="9.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="rankMng" Type="RankManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="8.938" />
+        <Point X="16.25" Y="8.938" />
+        <Point X="16.25" Y="6.435" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="clientMng" Type="ClientManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="8.688" />
+        <Point X="18.5" Y="8.688" />
+        <Point X="18.5" Y="7.296" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="currentSceneType" Type="SceneType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27.125" Y="9.044" />
+        <Point X="27.125" Y="9.419" />
+        <Point X="24.5" Y="9.419" />
+        <Point X="24.5" Y="10" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAwFARgMRCEQDAAgIQAAIjC2MAAABAAAQAAAMAEgAkQ=</HashCode>
+      <FileName>Assets\Scripts\GameFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_instance" />
+      <Field Name="sceneMng" />
+      <Field Name="uiMng" />
+      <Field Name="rankMng" />
+      <Field Name="audioMng" />
+      <Field Name="cameraCtr" />
+      <Field Name="clientMng" />
+      <Field Name="requestMng" />
+      <Field Name="userData" />
+      <Field Name="currentGameState" />
+      <Field Name="currentSceneType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AudioManager">
+    <Position X="24.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAAAAAAAAAgAAAAAwICAAAAgUAAAAAAAAAFgQ=</HashCode>
+      <FileName>Assets\Scripts\Manager\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseManager">
+    <Position X="18.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Manager\BaseManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="facade" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RankManager">
+    <Position X="15.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAABAAAAAAAAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Manager\RankManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RequestManager">
+    <Position X="20" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Manager\RequestManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneManager">
+    <Position X="22.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Manager\SceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager">
+    <Position X="13" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="UIManager.UIPanelTypeJson">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Manager\UIManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAIQgAABAAEAAAACAAEAAgQAAQAAQAAoAAAAAAARA=</HashCode>
+      <FileName>Assets\Scripts\Manager\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActionData">
+    <Position X="20.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQ=</HashCode>
+      <FileName>Assets\Scripts\Model\ActionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RankItemData">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\RankItemData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RecordData">
+    <Position X="23" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\RecordData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReturnData">
+    <Position X="23" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\ReturnData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserData">
+    <Position X="28" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Model\UserData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientManager">
+    <Position X="17.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAACAAAAAAAACAABCAIAAAAAQAAAQAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Net\ClientManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Message">
+    <Position X="31.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAABAAAAAAJAAAQCQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Net\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseRequest">
+    <Position X="26.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAIAACAgAAAAAAAAAAABAQAAEA=</HashCode>
+      <FileName>Assets\Scripts\Request\BaseRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_facade" />
+      <Field Name="actionCode" />
+      <Property Name="facade" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GetRankRequest">
+    <Position X="23.25" Y="13.25" Width="1.5" />
+    <InheritanceLine Type="BaseRequest" FixedFromPoint="true">
+      <Path>
+        <Point X="26.25" Y="13.438" />
+        <Point X="24.75" Y="13.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Request\GetRankRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginRequest">
+    <Position X="20.75" Y="13.25" Width="1.5" />
+    <InheritanceLine Type="BaseRequest" FixedFromPoint="true">
+      <Path>
+        <Point X="26.5" Y="14.504" />
+        <Point X="26.5" Y="15.195" />
+        <Point X="21.5" Y="15.195" />
+        <Point X="21.5" Y="14.82" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="loginPanel" Type="LoginPanel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.75" Y="13.75" />
+        <Point X="20" Y="13.75" />
+        <Point X="20" Y="13" />
+        <Point X="7.75" Y="13" />
+        <Point X="7.75" Y="8.655" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAgAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Request\LoginRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loginPanel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SubmitRequest">
+    <Position X="18.25" Y="13.25" Width="1.5" />
+    <InheritanceLine Type="BaseRequest" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="27.312" Y="14.504" />
+        <Point X="27.312" Y="15.728" />
+        <Point X="19" Y="15.728" />
+        <Point X="19" Y="14.82" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Request\SubmitRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleMainPlayerAI" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="16.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\AI\RoleMainPlayerAI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoleMonsterAI" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAgAAgAAAAAAAAgAAAAAAAAAAAAAAACQ=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\AI\RoleMonsterAI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoleFSMMng">
+    <Position X="8" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAIAAABAAAAAAAAAAAACAAAAAAAAAAAAEAIAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\RoleFSMMng.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_CurrRoleState" />
+      <Property Name="CurrRoleStateEnum" />
+      <Property Name="CurrRoleCtrl" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RoleInfo">
+    <Position X="12" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\RoleInfo\RoleInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleStateAbstract">
+    <Position X="4.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAABCAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateAbstract.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrRoleFSMMng" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RoleStateAttack">
+    <Position X="2.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAgABAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleStateDamage">
+    <Position X="4.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateDamage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleStateDie">
+    <Position X="6.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateDie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleStateIdle">
+    <Position X="9" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateIdle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleStateRun">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAgABAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\State\RoleStateRun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DictionaryExtension">
+    <Position X="34.25" Y="20.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIFramework\Extension\DictionaryExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIPanelInfo" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEAAAAAAAAACAAAAAABAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIFramework\UIPanel\UIPanelInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="panelType" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RankItem">
+    <Position X="2.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAACAEEAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIItem\RankItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasePanel">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="facade" Type="GameFacade" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="0.679" />
+        <Point X="27.5" Y="0.679" />
+        <Point X="27.5" Y="1.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Facade" Type="GameFacade" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="0.858" />
+        <Point X="26.625" Y="0.858" />
+        <Point X="26.625" Y="1.5" />
+        <Point X="27" Y="1.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="UIMng" Type="UIManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.521" />
+        <Point X="13.312" Y="1.521" />
+        <Point X="13.312" Y="4" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="uiMng" Type="UIManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="2.011" />
+        <Point X="12.625" Y="2.011" />
+        <Point X="12.625" Y="4.812" />
+        <Point X="13" Y="4.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAgAAAAAAAAAAAAQAAAABIAAABQAIEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\BasePanel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="facade" />
+      <Field Name="uiMng" />
+      <Property Name="Facade" />
+      <Property Name="UIMng" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GamePanel">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQACCAAQAAAAAAAAAAAgAwAAAAIIEAAQAAEAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\GamePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginPanel">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <AssociationLine Name="loginRequest" Type="LoginRequest" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.188" Y="8.655" />
+        <Point X="8.188" Y="12.198" />
+        <Point X="21.625" Y="12.198" />
+        <Point X="21.625" Y="13.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAQBBgACASAAAAgAAAAAQAAAAAgQAAAABIEAADAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\LoginPanel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loginRequest" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MenuPanel">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <AssociationLine Name="getRankRequest" Type="GetRankRequest" ManuallyRouted="true">
+      <Path>
+        <Point X="11" Y="5.99" />
+        <Point X="11.375" Y="5.99" />
+        <Point X="11.375" Y="11.845" />
+        <Point X="24" Y="11.845" />
+        <Point X="24" Y="13.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACEAAAgAgAAAAAEAAAIQAQAAAIgAABAgAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\MenuPanel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="getRankRequest" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MessagePanel">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAAAAAAAEAAAAAAAAAAAAAAIAIAAAAABADA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\MessagePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RankPanel">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQBAAAAACgAABgAIAAIAAAAAAAQAAgABIAAABAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIPanel\RankPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IRoleAI">
+    <Position X="16" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Role\FSM\AI\IRoleAI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SceneType">
+    <Position X="23" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameStateType">
+    <Position X="25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoleState">
+    <Position X="11" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAADAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAEAAAI=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ToAnimatorConditon">
+    <Position X="6.5" Y="20.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAEIAAAAAAAAAAIAAAAAAAgAAAAAAQAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoleAnimatorName">
+    <Position X="4.5" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAADAAAAAAAAgAACAAAAAAIAAAACAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoleType">
+    <Position X="14" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAEAQAA=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ActionCode">
+    <Position X="29" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAQEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ReturnCode">
+    <Position X="20.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\EnumDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UIPanelType">
+    <Position X="26" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAQIAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIFramework\UIPanel\UIPanelType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
