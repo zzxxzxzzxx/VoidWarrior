@@ -1,0 +1,9 @@
+[2018-12-07 16:51:13] ---------TraceErr---------
+Traceback (most recent call last):
+  File "C:\Users\licong\Desktop\server\server\code\clientsocket\manager.py", line 23, in InitManger
+    self.m_oSocket.bind(("10.32.12.103", 12080))
+  File "D:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 10049] 
+---------extra---------
+
