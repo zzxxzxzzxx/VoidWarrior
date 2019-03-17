@@ -147,6 +147,16 @@ public class GameFacade : MonoBehaviour
     }
 
     /// <summary>
+    /// 加载教学场景
+    /// </summary>
+    public void LoadToInstruct()
+    {
+        sceneMng.LoadToInstruct();
+        currentGameState = GameStateType.Start;
+        gameUIUpdate = false;
+
+    }
+    /// <summary>
     /// 加载登录场景
     /// </summary>
     public void LoadToLogin()

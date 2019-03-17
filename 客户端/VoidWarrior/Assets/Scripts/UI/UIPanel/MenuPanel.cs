@@ -110,7 +110,8 @@ public class MenuPanel : BasePanel
     private void OnStartClick()
     {
         PlayClickSound();
-        facade.LoadToGame();
+        //facade.LoadToGame();
+        facade.LoadToInstruct();
     }
 
     /// <summary>

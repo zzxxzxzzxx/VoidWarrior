@@ -36,6 +36,15 @@ public class SceneManager : BaseManager
     }
 
     /// <summary>
+    /// 加载教学场景
+    /// </summary>
+    public void LoadToInstruct()
+    {
+        facade.currentSceneType = SceneType.Instruct;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_Instruct");
+    }
+
+    /// <summary>
     /// 加载到游戏场景
     /// </summary>
     public void LoadToGame()

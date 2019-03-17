@@ -56104,3 +56104,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 [2018-12-12 19:42:35] Duplicate entry '0' for key 'PRIMARY'
 [2018-12-12 19:42:35] Duplicate entry '0' for key 'PRIMARY'
 [2018-12-12 19:42:35] Duplicate entry '0' for key 'PRIMARY'
+[2019-03-17 16:56:54] 创建数据表rank
+[2019-03-17 16:56:55] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-17 20:51:56] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
