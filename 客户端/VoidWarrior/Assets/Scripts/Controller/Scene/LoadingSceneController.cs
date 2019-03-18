@@ -74,6 +74,7 @@ public class LoadingSceneController : MonoBehaviour
 
         //根据中介者获取目前场景状态，确定加载什么场景
         string strSceneName = string.Empty;
+
         switch (GameFacade.Instance.currentSceneType)
         {
             case SceneType.Game:
@@ -81,6 +82,9 @@ public class LoadingSceneController : MonoBehaviour
                 break;
             case SceneType.Menu:
                 strSceneName = "Scene_Menu";
+                break;
+            case SceneType.Instruct:
+                strSceneName = "Scene_Instruct";
                 break;
         }
 

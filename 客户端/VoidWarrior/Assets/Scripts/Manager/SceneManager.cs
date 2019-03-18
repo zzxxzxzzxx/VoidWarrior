@@ -41,7 +41,9 @@ public class SceneManager : BaseManager
     public void LoadToInstruct()
     {
         facade.currentSceneType = SceneType.Instruct;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_Instruct");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_Loading");
+
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_Instruct");
     }
 
     /// <summary>

@@ -44,6 +44,24 @@ public class GameController : MonoBehaviour
         {
             ToGameStart();
         }
+        //Teaching部分需要重新设计
+        if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
+        {
+            if (!GameFacade.Instance.gameUIUpdate)
+            {
+                ToGaming();
+            }
+            else if (timeCountDown <= 0)
+            {
+                ToGameDefeat();
+            }
+            else
+            {
+                timeCountDown -= Time.deltaTime;
+                gamePanel.SetTimeText(((int)timeCountDown).ToString());
+            }
+
+        }
 
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming))
         {
@@ -170,7 +188,10 @@ public class GameController : MonoBehaviour
         }
 
         //更新游戏状态
-        GameFacade.Instance.currentGameState = GameStateType.Gaming;
+        if (GameFacade.Instance.currentSceneType == SceneType.Game)
+            GameFacade.Instance.currentGameState = GameStateType.Gaming;
+        else if (GameFacade.Instance.currentSceneType == SceneType.Instruct)
+            GameFacade.Instance.currentGameState = GameStateType.Teaching;
         GameFacade.Instance.gameUIUpdate = false;
     }
     #endregion

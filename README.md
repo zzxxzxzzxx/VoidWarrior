@@ -17,4 +17,6 @@
 2. 客户端数据模型全部使用public,因为json在转换字符串和类的时候需要进行引用，不知道具体细节，所以直接全部设为public，应部分可设置为private
 
 #by znanLee
-测试文件更改和commit
+1. 添加Scene_Instruct和相关素材
+2. enum里，新添加SceneType:Instruct,GameState:Teaching,修改代码使正常显示
+3. 修改代码，使得Scene_Instruct可以正常加载
