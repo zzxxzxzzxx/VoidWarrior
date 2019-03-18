@@ -56119,3 +56119,10 @@ SET FOREIGN_KEY_CHECKS = 0;
   user_name varchar(30),
   score int(11),
   P' at line 1
+[2019-03-18 20:52:33] 创建数据表rank
+[2019-03-18 20:52:34] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
