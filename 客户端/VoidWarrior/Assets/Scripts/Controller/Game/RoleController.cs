@@ -116,6 +116,7 @@ public class RoleController : MonoBehaviour
             #endregion
         }
 
+        //Teaching还需修改
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
         {
             ////如果角色没有AI，直接返回
@@ -135,26 +136,25 @@ public class RoleController : MonoBehaviour
                 if (currRoleInfo.IsAlive && !EventSystem.current.IsPointerOverGameObject())
                 {
                     //主角移动
-                    if (Input.GetMouseButtonUp(0))
+                    if (Input.GetKey(KeyCode.A))
                     {
-                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                        RaycastHit hitInfo;
-                        if (Physics.Raycast(ray, out hitInfo, 1 << LayerMask.NameToLayer("Ground")))
-                        {
-
-                            //if (hitInfo.collider.name.Equals("Ground", System.StringComparison.currentCultureIgnoreCase))
-                            {
-                                //Debug.Log(EventSystem.current.IsPointerOverGameObject());
-                                // mNMA.SetDestination(hitInfo.point);
-                                //寻找到射线与地面碰撞的位置，更改移动信息
-                                MoveTo(hitInfo.point);
-                            }
-                        }
+                        MoveTo(agent.transform.position - GameFacade.Instance.GetCameraForward() * 10);
+                    }
+                    else if (Input.GetKey(KeyCode.D))
+                    {
+                        MoveTo(agent.transform.position + GameFacade.Instance.GetCameraForward() * 10);
+                    }
+                    else if (Input.GetKey(KeyCode.S))
+                    {
+                        MoveTo(agent.transform.position + GameFacade.Instance.GetCameraRight() * 10);
+                    }
+                    else if (Input.GetKey(KeyCode.W))
+                    {
+                        MoveTo(agent.transform.position - GameFacade.Instance.GetCameraRight() * 10);
                     }
 
                     //主角攻击
-                    if (Input.GetMouseButtonUp(1))
+                    if (Input.GetMouseButtonUp(0))
                     {
                         Debug.Log("fire");
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

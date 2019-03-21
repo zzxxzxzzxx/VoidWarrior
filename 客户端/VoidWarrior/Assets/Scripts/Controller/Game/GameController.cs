@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
             ToGameStart();
         }
         //Teaching部分需要重新设计
+        //下一步工作：把该脚本的内容修改到InstructController.cs
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
         {
             if (!GameFacade.Instance.gameUIUpdate)

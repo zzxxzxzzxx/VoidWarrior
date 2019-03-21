@@ -8,3 +8,31 @@
 [2019-02-16 18:51:53] 创建数据表rank
 [2019-02-16 18:51:54] 创建数据表user
 [2019-02-16 18:51:54] 创建数据表tbl_global
+[2019-03-21 22:21:50] 创建数据表rank
+[2019-03-21 22:21:50] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-21 23:54:09] 创建数据表rank
+[2019-03-21 23:54:09] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-21 23:59:00] 创建数据表rank
+[2019-03-21 23:59:00] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-21 23:59:52] 创建数据表rank
+[2019-03-21 23:59:52] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1

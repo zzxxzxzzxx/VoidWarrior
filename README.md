@@ -18,3 +18,7 @@
 1. 添加Scene_Instruct和相关素材
 2. enum里，新添加SceneType:Instruct,GameState:Teaching,修改代码使正常显示
 3. 修改代码，使得Scene_Instruct可以正常加载
+4. Menu scene添加了进入Instruct scene的button
+5. 和zzxxzxzzxx-registe分支合并
+
+

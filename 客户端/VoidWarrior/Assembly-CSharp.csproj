@@ -61,10 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Role\Yurowm\Demo\Scripts\Actions.cs" />
-    <Compile Include="Assets\Resources\Role\Yurowm\Demo\Scripts\CharacterPanel.cs" />
-    <Compile Include="Assets\Resources\Role\Yurowm\Demo\Scripts\CharacterViewer.cs" />
-    <Compile Include="Assets\Resources\Role\Yurowm\Demo\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\Actions.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterPanel.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterViewer.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Common\DestroyForTime.cs" />
     <Compile Include="Assets\Scripts\Common\EnumDefine.cs" />
     <Compile Include="Assets\Scripts\Common\UGUISpriteAnimation.cs" />
@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Request\BaseRequest.cs" />
     <Compile Include="Assets\Scripts\Request\GetRankRequest.cs" />
     <Compile Include="Assets\Scripts\Request\LoginRequest.cs" />
+    <Compile Include="Assets\Scripts\Request\RegisteRequest.cs" />
     <Compile Include="Assets\Scripts\Request\SubmitRequest.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\AI\IRoleAI.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\AI\RoleMainPlayerAI.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Scripts\UI\UIPanel\MenuPanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\MessagePanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\RankPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\UIPanel\RegistePanel.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructControl.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructController.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructSceneController.cs" />
@@ -127,7 +129,7 @@
     <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Bump fade addpass.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Bump fade.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\Terrain Shader\AddOn1\4x UV_Mixing.shader" />
-    <None Include="Assets\Resources\Role\Yurowm\Shaders\SkinShader.shader" />
+    <None Include="Assets\Resources\Prefabs\Role\Yurowm\Shaders\SkinShader.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendx5.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\Terrain Shader\AddOn2\custom terrain Bump fade 4x smooth.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\custom terrain fade addpass.shader" />

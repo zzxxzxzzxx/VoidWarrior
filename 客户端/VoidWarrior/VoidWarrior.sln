@@ -1,19 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior", "Assembly-CSharp.csproj", "{66FA9673-58A4-FCA1-C666-2109D6B39D65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior", "Assembly-CSharp-firstpass.csproj", "{4F32D929-3B6B-6EC8-6DC6-5F2B540CAEE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior", "Assembly-CSharp-Editor-firstpass.csproj", "{0FBFDC79-BA23-7149-0373-DA58C946396E}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior", "VoidWarrior.csproj", "{8335EB48-0B9A-F935-C912-1A6E6D992454}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior.Plugins", "VoidWarrior.Plugins.csproj", "{9856AB80-DDB6-08F5-5EA9-01460C8750B2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidWarrior.Editor.Plugins", "VoidWarrior.Editor.Plugins.csproj", "{DF081199-F27B-9213-D35F-627D0DE594E2}"
->>>>>>> a03006e43dd88f6573baafc347b4b2c6b66b9093
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,7 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-<<<<<<< HEAD
 		{66FA9673-58A4-FCA1-C666-2109D6B39D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66FA9673-58A4-FCA1-C666-2109D6B39D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66FA9673-58A4-FCA1-C666-2109D6B39D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,20 +25,6 @@ Global
 		{0FBFDC79-BA23-7149-0373-DA58C946396E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FBFDC79-BA23-7149-0373-DA58C946396E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FBFDC79-BA23-7149-0373-DA58C946396E}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{8335EB48-0B9A-F935-C912-1A6E6D992454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8335EB48-0B9A-F935-C912-1A6E6D992454}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8335EB48-0B9A-F935-C912-1A6E6D992454}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8335EB48-0B9A-F935-C912-1A6E6D992454}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9856AB80-DDB6-08F5-5EA9-01460C8750B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9856AB80-DDB6-08F5-5EA9-01460C8750B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9856AB80-DDB6-08F5-5EA9-01460C8750B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9856AB80-DDB6-08F5-5EA9-01460C8750B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF081199-F27B-9213-D35F-627D0DE594E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF081199-F27B-9213-D35F-627D0DE594E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF081199-F27B-9213-D35F-627D0DE594E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF081199-F27B-9213-D35F-627D0DE594E2}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> a03006e43dd88f6573baafc347b4b2c6b66b9093
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
