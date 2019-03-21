@@ -108,7 +108,7 @@ public class RankPanel : BasePanel
     {
         PlayClickSound();
         LeaveAnim();
-        uiMng.PopPanel();
+        facade.ClosePanel();
     }
 
     /// <summary>

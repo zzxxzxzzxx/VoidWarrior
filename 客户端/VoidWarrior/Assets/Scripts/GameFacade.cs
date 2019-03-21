@@ -192,6 +192,32 @@ public class GameFacade : MonoBehaviour
     {
         uiMng.PushPanel(type);
     }
+
+    /// <summary>
+    /// 关闭UI面板
+    /// </summary>
+    public void ClosePanel()
+    {
+        uiMng.PopPanel();
+    }
+
+    /// <summary>
+    /// 异步消息展示
+    /// </summary>
+    /// <param name="msg">消息内容</param>
+    public void ShowMessageSync(string msg)
+    {
+        uiMng.ShowMessageSync(msg);
+    }
+
+    /// <summary>
+    /// 设置消息窗口
+    /// </summary>
+    /// <param name="msgPanel">MessagePanel消息窗口</param>
+    public void InjectMsgPanel(MessagePanel msgPanel)
+    {
+        uiMng.InjectMsgPanel(msgPanel);
+    }
     #endregion
 
     #region 排名管理器的方法
@@ -282,27 +308,45 @@ public class GameFacade : MonoBehaviour
     /// 摄像机左右旋转
     /// </summary>
     /// <param name="type">旋转方式，0=左旋 1=右旋</param>
-    public void SetCameraRotate(int type)
+    public void SetCameraRotate(float speed)
     {
-        cameraCtr.SetCameraRotate(type);
+        cameraCtr.SetCameraRotate(speed);
     }
 
     /// <summary>
     /// 摄像机上下旋转
     /// </summary>
     /// <param name="type">0=上旋 1=下旋</param>
-    public void SetCameraUpAndDown(int type)
+    public void SetCameraUpAndDown(float speed)
     {
-        cameraCtr.SetCameraUpAndDown(type);
+        cameraCtr.SetCameraUpAndDown(speed);
     }
 
     /// <summary>
     /// 摄像机缩放
     /// </summary>
     /// <param name="type">0=拉近 1=拉远</param>
-    public void SetCameraZoom(int type)
+    public void SetCameraZoom(float speed)
     {
-        cameraCtr.SetCameraZoom(type);
+        cameraCtr.SetCameraZoom(speed);
+    }
+
+    /// <summary>
+    /// 获取摄像机的z轴方向
+    /// </summary>
+    /// <returns>摄像机的z轴方向</returns>
+    public Vector3 GetCameraForward()
+    {
+        return cameraCtr.GetCameraForward();
+    }
+
+    /// <summary>
+    /// 获取摄像机的x轴方向
+    /// </summary>
+    /// <returns>摄像机的x轴方向</returns>
+    public Vector3 GetCameraRight()
+    {
+        return cameraCtr.GetCameraRight();
     }
     #endregion
 

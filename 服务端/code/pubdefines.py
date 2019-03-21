@@ -53,5 +53,6 @@ def TimeStr(ti=-1, sFormat="%Y-%m-%d %H:%M:%S"):
 
 def FormatPrint(sMsg):
     sMsg = "-------------------%s-------------------"%sMsg
+    #sMsg = sMsg.decode("utf-8").encode("utf-8") ####命令行和pychram编码的选择
     sMsg = sMsg.decode("utf-8").encode("gbk")
     print sMsg

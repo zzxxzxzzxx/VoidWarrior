@@ -18,6 +18,12 @@ public class LoginPanel : BasePanel
     private Button loginButton;
 
     /// <summary>
+    /// 注册按钮
+    /// </summary>
+    [SerializeField]
+    private Button registeButton;
+
+    /// <summary>
     /// 用户名输入框
     /// </summary>
     [SerializeField]
@@ -56,6 +62,7 @@ public class LoginPanel : BasePanel
         loginRequest = GetComponent<LoginRequest>(); //获取登录请求脚本
 
         loginButton.onClick.AddListener(OnLoginClick); //给登录按钮添加监听
+        registeButton.onClick.AddListener(OnRegisteClick); //给注册按钮添加监听
     }
 
     private void Update()
@@ -120,7 +127,7 @@ public class LoginPanel : BasePanel
         }
         else
         {
-            uiMng.ShowMessageSync("用户名或密码错误，无法登录，请重新输入!!"); //异常处理
+            facade.ShowMessageSync("用户名或密码错误，无法登录，请重新输入!!"); //异常处理
         }
     }
     #endregion
@@ -145,12 +152,21 @@ public class LoginPanel : BasePanel
         }
         if (msg != "")
         {
-            uiMng.ShowMessage(msg); return;
+            facade.ShowMessage(msg); return;
         }
 
         loginRequest.SendRequest(usernameIF.text, passwordIF.text); //向服务器确认账号是否存在
     }
 
+    /// <summary>
+    /// 注册按钮监听
+    /// </summary>
+    private void OnRegisteClick()
+    {
+        PlayClickSound(); //发出点击声音
+        facade.LoadPanel(UIPanelType.Registe);
+   }
+ 
     /// <summary>
     /// 进入动画显示
     /// </summary>
@@ -174,6 +190,8 @@ public class LoginPanel : BasePanel
     /// </summary>
     private void DisableSelf()
     {
+        usernameIF.text = "";
+        passwordIF.text = "";
         gameObject.SetActive(false);
     }
     #endregion

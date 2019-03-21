@@ -240,7 +240,12 @@ public enum ActionCode
     /// <summary>
     /// 提交结果
     /// </summary>
-    Submit
+    Submit,
+
+    /// <summary>
+    /// 注册
+    /// </summary>
+    Registe
 }
 #endregion
 

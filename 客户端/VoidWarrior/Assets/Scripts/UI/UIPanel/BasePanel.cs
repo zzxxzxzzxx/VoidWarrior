@@ -11,23 +11,9 @@ public class BasePanel : MonoBehaviour
 {
     #region 成员变量
     /// <summary>
-    /// UI管理器
-    /// </summary>
-    protected UIManager uiMng;
-
-    /// <summary>
     /// GameFacade中介者
     /// </summary>
     protected GameFacade facade;
-
-    /// <summary>
-    /// UI管理器属性
-    /// 共有set
-    /// </summary>
-    public UIManager UIMng
-    {
-        set { uiMng = value; }
-    }
 
     /// <summary>
     /// facade中介者属性

@@ -88,7 +88,7 @@ public class MenuPanel : BasePanel
     public override void OnExit()
     {
         base.OnExit();
-        uiMng.PopPanel();
+        facade.ClosePanel();
         gameObject.SetActive(false);
     }
     #endregion
@@ -122,7 +122,7 @@ public class MenuPanel : BasePanel
         PlayClickSound();
         getRankRequest.SendRequest();
 
-        uiMng.PushPanel(UIPanelType.Rank);
+        facade.LoadPanel(UIPanelType.Rank);
     }
 
     /// <summary>

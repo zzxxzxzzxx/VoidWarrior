@@ -2,23 +2,27 @@
   "infoList": [
     {
       "panelTypeString": "Message",
-      "path": "UI/UIPanel/MessagePanel"
+      "path": "Prefabs/UIPanel/MessagePanel"
     },
     {
       "panelTypeString": "Login",
-      "path": "UI/UIPanel/LoginPanel"
+      "path": "Prefabs/UIPanel/LoginPanel"
     },
     {
       "panelTypeString": "Menu",
-      "path": "UI/UIPanel/MenuPanel"
+      "path": "Prefabs/UIPanel/MenuPanel"
     },
     {
       "panelTypeString": "Rank",
-      "path": "UI/UIPanel/RankPanel"
+      "path": "Prefabs/UIPanel/RankPanel"
     },
     {
       "panelTypeString": "Game",
-      "path": "UI/UIPanel/GamePanel"
+      "path": "Prefabs/UIPanel/GamePanel"
+    },
+    {
+      "panelTypeString": "Registe",
+      "path": "Prefabs/UIPanel/RegistePanel"
     }
   ]
 }

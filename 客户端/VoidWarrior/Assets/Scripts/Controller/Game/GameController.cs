@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
     private void ToGaming()
     {
         score = 0; //分数重置
-        timeCountDown = 120; //设置时间
+        timeCountDown = 120000; //设置时间
         //刷新ui
         gamePanel.SetScoreText(score.ToString()); 
         gamePanel.SetTimeText(((int)timeCountDown).ToString());

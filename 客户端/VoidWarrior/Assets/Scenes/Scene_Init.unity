@@ -631,6 +631,7 @@ MonoBehaviour:
   currentSceneType: 0
   currentGameState: 0
   gameUIUpdate: 0
+  rankUpdate: 0
 --- !u!4 &1757802058
 Transform:
   m_ObjectHideFlags: 0

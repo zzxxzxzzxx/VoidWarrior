@@ -30,7 +30,7 @@ public class GameSceneController : MonoBehaviour
         GameFacade.Instance.PlayBgSound(AudioManager.Sound_GameBackGround); //播放背景音乐
 
         //加载主角
-        GameObject objMainPlayer = Resources.Load("Role/Prefabs/Role_MainPlayer") as GameObject;
+        GameObject objMainPlayer = Resources.Load("Prefabs/Role/Prefabs/Role_MainPlayer") as GameObject;
         objMainPlayer.transform.position = m_PlayerBornPos.position;
         objMainPlayer = GameObject.Instantiate(objMainPlayer);
         RoleController mainPlayerCtrl = objMainPlayer.GetComponent<RoleController>();
@@ -39,7 +39,7 @@ public class GameSceneController : MonoBehaviour
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
         //加载怪物
-        GameObject objMonster = Resources.Load("Role/Prefabs/Role_Monster") as GameObject;
+        GameObject objMonster = Resources.Load("Prefabs/Role/Prefabs/Role_Monster") as GameObject;
         objMonster.transform.position = m_MonsterBornPos.position;
         GameObject objMonster1 = GameObject.Instantiate(objMonster);
         GameObject objMonster2 = GameObject.Instantiate(objMonster);
