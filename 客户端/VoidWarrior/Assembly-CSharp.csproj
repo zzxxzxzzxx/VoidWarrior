@@ -120,6 +120,8 @@
     <Compile Include="Assets\Scripts\UI\UIPanel\MessagePanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\RankPanel.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructControl.cs" />
+    <Compile Include="Assets\znanLee\Scripts\InstructController.cs" />
+    <Compile Include="Assets\znanLee\Scripts\InstructSceneController.cs" />
     <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendNormalx5.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Diffuse fade.shader" />
     <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Bump fade addpass.shader" />

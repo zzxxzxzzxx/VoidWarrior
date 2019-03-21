@@ -131,6 +131,75 @@ public class RoleController : MonoBehaviour
             #endregion
         }
 
+        if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
+        {
+            ////如果角色没有AI，直接返回
+            if (currRoleAI == null) return;
+            currRoleAI.DoAI();
+
+            if (agent == null) return; //没有网格导航直接返回
+
+            if (currRoleFSMMng != null)
+            {
+                currRoleFSMMng.OnUpdate(); //执行当前动画状态
+            }
+
+            #region 主角
+            if (currRoleType.Equals(RoleType.MainPlayer))
+            {
+                if (currRoleInfo.IsAlive && !EventSystem.current.IsPointerOverGameObject())
+                {
+                    //主角移动
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                        RaycastHit hitInfo;
+                        if (Physics.Raycast(ray, out hitInfo, 1 << LayerMask.NameToLayer("Ground")))
+                        {
+
+                            //if (hitInfo.collider.name.Equals("Ground", System.StringComparison.currentCultureIgnoreCase))
+                            {
+                                //Debug.Log(EventSystem.current.IsPointerOverGameObject());
+                                // mNMA.SetDestination(hitInfo.point);
+                                //寻找到射线与地面碰撞的位置，更改移动信息
+                                MoveTo(hitInfo.point);
+                            }
+                        }
+                    }
+
+                    //主角攻击
+                    if (Input.GetMouseButtonUp(1))
+                    {
+                        Debug.Log("fire");
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        RaycastHit hitInfo;
+                        if (Physics.Raycast(ray, out hitInfo))
+                        {
+                            ToAttack(hitInfo.point);
+                        }
+                    }
+                }
+
+                if (!currRoleInfo.IsAlive) //主角死亡
+                {
+                    ToDie(); //死亡动画
+                    gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    StartCoroutine(GameOver()); //转到游戏结束
+                }
+            }
+            #endregion
+
+            #region 怪物
+            if (currRoleType.Equals(RoleType.Monster))
+            {
+                agent.speed += 0.01f; //随时间加快速度
+            }
+            #endregion
+        }
+
+
+
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming)) //游戏状态为游戏中才执行
         {
             ////如果角色没有AI，直接返回
