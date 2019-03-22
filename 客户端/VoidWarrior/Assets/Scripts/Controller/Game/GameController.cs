@@ -44,6 +44,25 @@ public class GameController : MonoBehaviour
         {
             ToGameStart();
         }
+        //Teaching部分需要重新设计
+        //下一步工作：把该脚本的内容修改到InstructController.cs
+        if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
+        {
+            if (!GameFacade.Instance.gameUIUpdate)
+            {
+                ToGaming();
+            }
+            else if (timeCountDown <= 0)
+            {
+                ToGameDefeat();
+            }
+            else
+            {
+                timeCountDown -= Time.deltaTime;
+                gamePanel.SetTimeText(((int)timeCountDown).ToString());
+            }
+
+        }
 
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming))
         {
@@ -113,7 +132,7 @@ public class GameController : MonoBehaviour
     private void ToGaming()
     {
         score = 0; //分数重置
-        timeCountDown = 120; //设置时间
+        timeCountDown = 120000; //设置时间
         //刷新ui
         gamePanel.SetScoreText(score.ToString()); 
         gamePanel.SetTimeText(((int)timeCountDown).ToString());
@@ -170,7 +189,10 @@ public class GameController : MonoBehaviour
         }
 
         //更新游戏状态
-        GameFacade.Instance.currentGameState = GameStateType.Gaming;
+        if (GameFacade.Instance.currentSceneType == SceneType.Game)
+            GameFacade.Instance.currentGameState = GameStateType.Gaming;
+        else if (GameFacade.Instance.currentSceneType == SceneType.Instruct)
+            GameFacade.Instance.currentGameState = GameStateType.Teaching;
         GameFacade.Instance.gameUIUpdate = false;
     }
     #endregion

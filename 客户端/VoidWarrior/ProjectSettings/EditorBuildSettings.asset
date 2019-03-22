@@ -18,5 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Menu.unity
     guid: 3da6f3d09116a3e4e8542e494dd87e70
   - enabled: 1
+    path: Assets/Scenes/Scene_Instruct.unity
+    guid: 1187742d8ea15b64d8cedb93139a15aa
+  - enabled: 1
     path: Assets/Scenes/Scene_ChasingGame.unity
     guid: 5f689cd6a152c3e4db143586a5f53ffb
+  m_configObjects: {}

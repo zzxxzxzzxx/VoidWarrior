@@ -41,6 +41,7 @@ def ServerConsoleStart():
             print e
 
 def InitLogDir():
+    # type: () -> object
     try:
         os.mkdir("log")
     except:

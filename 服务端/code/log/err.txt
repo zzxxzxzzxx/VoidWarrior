@@ -1,9 +1,92 @@
-[2018-12-07 16:51:13] ---------TraceErr---------
+[2019-03-19 12:56:16] ---------TraceErr---------
 Traceback (most recent call last):
-  File "C:\Users\licong\Desktop\server\server\code\clientsocket\manager.py", line 23, in InitManger
-    self.m_oSocket.bind(("10.32.12.103", 12080))
-  File "D:\Python27\lib\socket.py", line 228, in meth
-    return getattr(self._sock,name)(*args)
-error: [Errno 10049] 
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\demo.py", line 134, in OnLogin
+    pubglobalmanager.CallManagerFunc("demo", "Login", oClient, dData)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "E:\work\ChasingGame-Ex5_ClientMng\CG\服务端\code\demo.py", line 101, in Login
+    oClient.Send(dReturn)
+UnboundLocalError: local variable 'dReturn' referenced before assignment
 ---------extra---------
-
+recvfail2
+[2019-03-19 14:15:31] ---------TraceErr---------
+Traceback (most recent call last):
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "E:\work\VoidWarrior\server\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "E:\work\VoidWarrior\server\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 134, in OnLogin
+    pubglobalmanager.CallManagerFunc("demo", "Login", oClient, dData)
+  File "E:\work\VoidWarrior\server\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 101, in Login
+    oClient.Send(dReturn)
+UnboundLocalError: local variable 'dReturn' referenced before assignment
+---------extra---------
+recvfail2
+[2019-03-20 10:58:03] ---------TraceErr---------
+Traceback (most recent call last):
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "E:\work\VoidWarrior\server\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "E:\work\VoidWarrior\server\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 134, in OnLogin
+    pubglobalmanager.CallManagerFunc("demo", "Login", oClient, dData)
+  File "E:\work\VoidWarrior\server\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 101, in Login
+    oClient.Send(dReturn)
+UnboundLocalError: local variable 'dReturn' referenced before assignment
+---------extra---------
+recvfail2
+[2019-03-20 14:13:33] ---------TraceErr---------
+Traceback (most recent call last):
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "E:\work\VoidWarrior\server\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "E:\work\VoidWarrior\server\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "E:\work\VoidWarrior\server\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 134, in OnLogin
+    pubglobalmanager.CallManagerFunc("demo", "Login", oClient, dData)
+  File "E:\work\VoidWarrior\server\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "E:\work\VoidWarrior\server\code\demo.py", line 101, in Login
+    oClient.Send(dReturn)
+UnboundLocalError: local variable 'dReturn' referenced before assignment
+---------extra---------
+recvfail2

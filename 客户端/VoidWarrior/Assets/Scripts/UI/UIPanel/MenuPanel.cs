@@ -11,6 +11,12 @@ public class MenuPanel : BasePanel
 {
     #region 成员变量
     /// <summary>
+    /// 教学按钮
+    /// </summary>
+    [SerializeField]
+    private Button instructButton;
+
+    /// <summary>
     /// 开始按钮
     /// </summary>
     [SerializeField]
@@ -39,6 +45,7 @@ public class MenuPanel : BasePanel
     void Start ()
     {
         //加载按钮监听
+        instructButton.onClick.AddListener(OnInstructClick);
         startButton.onClick.AddListener(OnStartClick);
         rankButton.onClick.AddListener(OnRankClick);
         quitButton.onClick.AddListener(OnQuitClick);
@@ -64,6 +71,7 @@ public class MenuPanel : BasePanel
     {
         gameObject.SetActive(true);
         base.OnPause();
+        instructButton.enabled = false;
         startButton.enabled = false;
         rankButton.enabled = false;
         quitButton.enabled = false;
@@ -88,7 +96,7 @@ public class MenuPanel : BasePanel
     public override void OnExit()
     {
         base.OnExit();
-        uiMng.PopPanel();
+        facade.ClosePanel();
         gameObject.SetActive(false);
     }
     #endregion
@@ -99,9 +107,20 @@ public class MenuPanel : BasePanel
     /// </summary>
     private void ButtonResume()
     {
+        instructButton.enabled = true;
         startButton.enabled = true;
         rankButton.enabled = true;
         quitButton.enabled = true;
+    }
+
+
+    /// <summary>
+    /// 教学按钮监听
+    /// </summary>
+    private void OnInstructClick()
+    {
+        PlayClickSound();
+        facade.LoadToInstruct();
     }
 
     /// <summary>
@@ -121,7 +140,7 @@ public class MenuPanel : BasePanel
         PlayClickSound();
         getRankRequest.SendRequest();
 
-        uiMng.PushPanel(UIPanelType.Rank);
+        facade.LoadPanel(UIPanelType.Rank);
     }
 
     /// <summary>

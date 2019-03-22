@@ -14,7 +14,8 @@ class CCommandManager:
         "updatepos" : ("demo","OnCommand"),
         "Login" : ("demo","OnLogin"),
         "GetRank" : ("demo", "OnGetRank"),
-        "Submit" : ("demo", "OnSubmit")
+        "Submit" : ("demo", "OnSubmit"),
+        "Registe":("demo","OnRegiste") ##Register optional qsg
         }
 
     def TrasnData(self, obj):

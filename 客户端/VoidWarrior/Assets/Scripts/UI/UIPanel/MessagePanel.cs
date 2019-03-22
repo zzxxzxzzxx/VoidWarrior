@@ -50,7 +50,7 @@ public class MessagePanel : BasePanel
         base.OnEnter();
         text = GetComponent<Text>();
         text.enabled = false;
-        uiMng.InjectMsgPanel(this); //向UI管理器添加本身
+        facade.InjectMsgPanel(this); //向UI管理器添加本身
     }
     #endregion
 

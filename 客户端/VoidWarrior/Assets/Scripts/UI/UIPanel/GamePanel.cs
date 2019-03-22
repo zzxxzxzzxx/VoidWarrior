@@ -62,7 +62,7 @@ public class GamePanel : BasePanel
     public override void OnExit()
     {
         base.OnExit();
-        uiMng.PopPanel();
+        facade.ClosePanel();
         gameObject.SetActive(false);
     }
     #endregion

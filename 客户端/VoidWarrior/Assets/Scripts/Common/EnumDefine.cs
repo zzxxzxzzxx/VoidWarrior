@@ -20,6 +20,11 @@ public enum SceneType
     Menu,
 
     /// <summary>
+    /// 教学面板
+    /// </summary>
+    Instruct,
+
+    /// <summary>
     /// 游戏面板
     /// </summary>
     Game
@@ -46,6 +51,11 @@ public enum GameStateType
     /// 游戏中状态
     /// </summary>
     Gaming,
+
+    /// <summary>
+    /// 教学中状态
+    /// </summary>
+    Teaching,
 
     /// <summary>
     /// 游戏胜利状态
@@ -230,7 +240,12 @@ public enum ActionCode
     /// <summary>
     /// 提交结果
     /// </summary>
-    Submit
+    Submit,
+
+    /// <summary>
+    /// 注册
+    /// </summary>
+    Registe
 }
 #endregion
 

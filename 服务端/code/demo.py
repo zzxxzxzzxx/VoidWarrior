@@ -43,6 +43,34 @@ class CDemo(dbctrl.saveobject.CSaveData):
         }
         oClient.Send(dReturn)
 
+    #注册操作 qsg
+    def Registe(self,oClient,dData):
+        # 新建账号
+        userName = dData["UserName"]
+        inputPassWord = dData["UserPW"]
+        user = userDAO()
+        user.GetUserByUsername(userName)
+        if user.result.GetUserName() != "": #判断是否存在用户
+            dReturn = {
+                "Return": "Fail"
+            }
+            dReturn = json.dumps(dReturn)
+            dReturn = {
+                "Action": "Registe",
+                "JsonData": dReturn
+            }
+        else:
+            user.AddUser(userName, inputPassWord)
+            dReturn = {
+                "Return": "Success"
+            }
+            dReturn = json.dumps(dReturn)
+            dReturn = {
+                "Action": "Registe",
+                "JsonData": dReturn
+            }
+        oClient.Send(dReturn)
+
     #登录操作
     def Login(self, oClient, dData):
         userName = dData["UserName"]
@@ -70,15 +98,13 @@ class CDemo(dbctrl.saveobject.CSaveData):
                     "action": "Login",
                     "JsonData": dReturn
                 }
-        else: 
-            #新建账号
-            user.AddUser(userName, inputPassWord)
+        else:
             dReturn = {
-                "Return": "Success"  
+                "Return": "Fail"
             }
             dReturn = json.dumps(dReturn)
             dReturn = {
-                "Action": "Login",
+                "action": "Login",
                 "JsonData": dReturn
             }
         oClient.Send(dReturn)
@@ -115,6 +141,9 @@ def OnCommand(oClient, dData):
 
 def OnLogin(oClient, dData):
     pubglobalmanager.CallManagerFunc("demo", "Login", oClient, dData)
+
+def OnRegiste(oClient, dData):
+    pubglobalmanager.CallManagerFunc("demo", "Registe", oClient, dData)
 
 def OnGetRank(oClient, dData):
     pubglobalmanager.CallManagerFunc("demo", "GetRank", oClient, dData)

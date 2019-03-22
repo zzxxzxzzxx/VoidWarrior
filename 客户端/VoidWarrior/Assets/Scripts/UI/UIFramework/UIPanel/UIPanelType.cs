@@ -36,5 +36,10 @@ public enum UIPanelType
     /// <summary>
     /// 游戏
     /// </summary>
-    Game
+    Game,
+
+    /// <summary>
+    /// 注册
+    /// </summary>
+    Registe
 }

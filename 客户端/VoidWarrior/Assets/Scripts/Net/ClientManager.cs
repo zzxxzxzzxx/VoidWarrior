@@ -107,7 +107,6 @@ public class ClientManager : BaseManager
             if (clientSocket == null || clientSocket.Connected == false) return; //失去连接直接返回
             int count = clientSocket.EndReceive(ar); //获取接收信息数量
             msg.ReadMessage(count, OnProcessDataCallback); //消息解读
-
             Start(); //继续异步监听
         }
         catch (Exception e)

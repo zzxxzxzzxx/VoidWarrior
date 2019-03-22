@@ -169,19 +169,19 @@ public class CameraController : MonoBehaviour
     /// <summary>
     /// 控制摄像机左右旋转
     /// </summary>
-    /// <param name="type">0=左旋 1=右旋</param>
-    public void SetCameraRotate(int type)
+    /// <param name="type">0=左旋 1=右旋</param> (type == 0 ? 1 : -1)
+    public void SetCameraRotate(float speed)
     {
-        transform.Rotate(0, 40 * Time.deltaTime * (type == 0 ? 1 : -1), 0);
+        transform.Rotate(0, speed * 80 * Time.deltaTime, 0);
     }
 
     /// <summary>
     /// 控制摄像机上下旋转
     /// </summary>
     /// <param name="type">0=上旋 1=下旋</param>
-    public void SetCameraUpAndDown(int type)
+    public void SetCameraUpAndDown(float speed)
     {
-        m_CameraUpAndDown.Rotate(0, 0, 40 * Time.deltaTime * (type == 0 ? 1 : -1));
+        m_CameraUpAndDown.Rotate(0, 0, speed * 80 * Time.deltaTime);
         m_CameraUpAndDown.localEulerAngles = new Vector3(0, 0, Mathf.Clamp(m_CameraUpAndDown.localEulerAngles.z, 35f, 80f));
     }
 
@@ -189,10 +189,28 @@ public class CameraController : MonoBehaviour
     /// 控制摄像机缩放
     /// </summary>
     /// <param name="type">0=拉近 1=拉远</param>
-    public void SetCameraZoom(int type)
+    public void SetCameraZoom(float speed)
     {
-        m_CameraZoom.Translate(Vector3.forward * 10 * Time.deltaTime * (type == 0 ? 1 : -1));
+        m_CameraZoom.Translate(speed * Vector3.forward * 500 * Time.deltaTime);
         m_CameraZoom.localPosition = new Vector3(0, 0, Mathf.Clamp(m_CameraZoom.localPosition.z, -50f, -25f));
+    }
+
+    /// <summary>
+    /// 获取摄像机的z轴方向
+    /// </summary>
+    /// <returns>摄像机的z轴方向</returns>
+    public Vector3 GetCameraForward()
+    {
+        return transform.forward;
+    }
+
+    /// <summary>
+    /// 获取摄像机的x轴方向
+    /// </summary>
+    /// <returns>摄像机的x轴方向</returns>
+    public Vector3 GetCameraRight()
+    {
+        return transform.right;
     }
     #endregion
 }

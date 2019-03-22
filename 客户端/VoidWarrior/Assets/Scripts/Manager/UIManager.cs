@@ -197,7 +197,6 @@ public class UIManager : BaseManager
             string path = panelPathDict.TryGet(panelType);
             GameObject instPanel = GameObject.Instantiate(Resources.Load(path)) as GameObject;
             instPanel.transform.SetParent(CanvasTransform, false);
-            instPanel.GetComponent<BasePanel>().UIMng = this; //设置UI管理器
             instPanel.GetComponent<BasePanel>().Facade = facade; //设置facade中介者
             panelDict.Add(panelType, instPanel.GetComponent<BasePanel>()); //在窗口字典中添加窗口
             return instPanel.GetComponent<BasePanel>();
