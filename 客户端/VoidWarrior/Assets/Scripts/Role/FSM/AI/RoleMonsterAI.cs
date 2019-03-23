@@ -61,6 +61,8 @@ public class RoleMonsterAI : IRoleAI
     #region 提供的方法
     public void DoAI()
     {
+        Debug.Log(currRoleCtrl.currRoleFSMMng.CurrRoleStateEnum);
+
         if (currRoleCtrl.currRoleFSMMng.CurrRoleStateEnum.Equals(RoleState.Run) || //在跑步状态或者等待状态才会执行
             currRoleCtrl.currRoleFSMMng.CurrRoleStateEnum.Equals(RoleState.Idle))
         {
