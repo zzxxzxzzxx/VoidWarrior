@@ -11,25 +11,49 @@ public class BulletController : MonoBehaviour
     /// <summary>
     /// 子弹飞行的速度
     /// </summary>
-    public int speed = 5;
+    public float speed = 5f;
 
     /// <summary>
     /// 爆炸特效游戏物体
     /// </summary>
     public GameObject explosionEffect;
+
+    /// <summary>
+    /// 光晕效果
+    /// </summary>
+    public GameObject holeStyle;
+
+    /// <summary>
+    /// holeStyle对应的light组件
+    /// </summary>
+    private Light holeStyleLight;
+
     /// <summary>
     /// 刚体组件
     /// </summary>
     private Rigidbody rgd;
+
+    /// <summary>
+    /// 获取MeshRenderer的material
+    /// </summary>
+    private Material material;
     #endregion
 
     #region 游戏流程
     void Start ()
     {
         rgd = GetComponent<Rigidbody>(); //获取刚体组件
+        holeStyleLight = holeStyle.GetComponent<Light>();
+        material = GetComponent<MeshRenderer>().material;
+        SetHole();
     }
-	
-	void Update ()
+
+    private void SetHole()
+    {
+        holeStyleLight.color = material.GetColor("_TintColor");
+    }
+
+    void Update ()
     {
         //向前移动
         rgd.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);

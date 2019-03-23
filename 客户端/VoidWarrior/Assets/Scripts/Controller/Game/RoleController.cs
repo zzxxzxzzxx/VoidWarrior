@@ -156,7 +156,6 @@ public class RoleController : MonoBehaviour
                     //主角攻击
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Debug.Log("fire");
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hitInfo;
                         if (Physics.Raycast(ray, out hitInfo))
@@ -224,7 +223,6 @@ public class RoleController : MonoBehaviour
                     //主角攻击
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Debug.Log("fire");
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hitInfo;
                         if (Physics.Raycast(ray, out hitInfo))
