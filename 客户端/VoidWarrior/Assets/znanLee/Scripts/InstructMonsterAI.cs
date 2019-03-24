@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
-
 /// <summary>
-/// 怪物AI
+/// 教学场景下的怪物AI
+/// 还需修改
 /// </summary>
-public class RoleMonsterAI : IRoleAI
+public class InstructMonsterAI : IRoleAI
 {
     #region 成员变量
     /// <summary>
@@ -40,13 +40,13 @@ public class RoleMonsterAI : IRoleAI
     /// 构造方法
     /// </summary>
     /// <param name="roleCtrl">角色控制器</param>
-    public RoleMonsterAI(RoleController roleCtrl)
+    public InstructMonsterAI(RoleController roleCtrl)
     {
         currRoleCtrl = roleCtrl;
         patrolPoint = new Vector3[3];
-        patrolPoint[0] = new Vector3(80, .28f, 60);
-        patrolPoint[1] = new Vector3(80, .28f, 80);
-        patrolPoint[2] = new Vector3(70, .28f, 75);
+        patrolPoint[0] = new Vector3(80, .28f, 120);
+        patrolPoint[1] = new Vector3(120, .28f, 80);
+        patrolPoint[2] = new Vector3(60, .28f, 100);
         currPoint = Random.Range(0, 3);
     }
     #endregion
@@ -96,10 +96,10 @@ public class RoleMonsterAI : IRoleAI
                     currPoint = (currPoint + Random.Range(-1, 2) + 3) % 3;
                     currRoleCtrl.MoveTo(new Vector3(patrolPoint[currPoint].x + Random.Range(-10, 10),
                                                     patrolPoint[currPoint].y,
-                                                    patrolPoint[currPoint].z + Random.Range(-10, 10)) );
+                                                    patrolPoint[currPoint].z + Random.Range(-10, 10)));
                     nextMoveTime = Time.time + 5f + Random.Range(-5, 10);
                 }
-             
+
                 //检测周围是否存在主角
                 Collider[] colliderArr = Physics.OverlapSphere(currRoleCtrl.transform.position, monsterPursuitRange, 1 << LayerMask.NameToLayer("Player"));
                 if (colliderArr != null && colliderArr.Length > 0)

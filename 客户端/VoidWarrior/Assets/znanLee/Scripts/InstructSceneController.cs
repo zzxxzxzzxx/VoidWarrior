@@ -20,8 +20,11 @@ public class InstructSceneController : MonoBehaviour {
     private Transform m_MonsterBornPos1;
     [SerializeField]
     private Transform m_MonsterBornPos2;
-   // private Transform m_MonsterBornPos3;
-
+    [SerializeField]
+    private Transform m_MonsterBornPos3;
+    private string path1 = "Prefabs/Role/Prefabs/Role_Monster";
+    private string path2 = "Prefabs/Role/Prefabs/Role_Monster2";
+    private string path3 = "Prefabs/Role/Prefabs/Role_Monster3";
     #region 游戏流程
     void Awake()
     {
@@ -41,21 +44,21 @@ public class InstructSceneController : MonoBehaviour {
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
         //加载怪物
-        GameObject objMonster1 = Resources.Load("Prefabs/Role/Prefabs/Role_Monster2") as GameObject;
-        objMonster1.transform.position = m_MonsterBornPos1.position;
-        GameObject obj1 = GameObject.Instantiate(objMonster1);
-        RoleController monsterCtrl1 = obj1.GetComponent<RoleController>();
-        monsterCtrl1.Init(RoleType.Monster,
-                         new RoleInfo(true),
-                         new RoleMonsterAI(obj1.GetComponent<RoleController>()));
-
-        //GameObject objMonster2 = Resources.Load("Prefabs/Role/Prefabs/Role_Monster") as GameObject;
-        //objMonster2.transform.position = m_MonsterBornPos2.position;
-        //GameObject obj2 = GameObject.Instantiate(objMonster2);
-        //RoleController monsterCtrl2 = obj2.GetComponent<RoleController>();
-        //monsterCtrl2.Init(RoleType.Monster,
-        //                 new RoleInfo(true),
-        //                 new RoleMonsterAI(obj2.GetComponent<RoleController>()));
+        LoadMonster(m_MonsterBornPos1,path1);
+        LoadMonster(m_MonsterBornPos2, path2);
+        LoadMonster(m_MonsterBornPos3, path3);
+        #endregion
     }
-    #endregion
+
+    private void LoadMonster(Transform transform, string path)
+    {
+        GameObject objMonster = Resources.Load(path.ToString()) as GameObject;
+        objMonster.transform.position = transform.position;
+        GameObject obj = GameObject.Instantiate(objMonster);
+        RoleController monsterCtrl = obj.GetComponent<RoleController>();
+        monsterCtrl.Init(RoleType.Monster,
+                         new RoleInfo(true),
+                         new InstructMonsterAI(obj.GetComponent<RoleController>()));
+    }
+
 }

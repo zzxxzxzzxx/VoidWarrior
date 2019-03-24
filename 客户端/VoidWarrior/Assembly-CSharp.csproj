@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\UI\UIPanel\RegistePanel.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructControl.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructController.cs" />
+    <Compile Include="Assets\znanLee\Scripts\InstructMonsterAI.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructSceneController.cs" />
     <Compile Include="Assets\znanLee\Scripts\Skeleton2Controller.cs" />
     <None Include="Assets\znanLee\Sprite\Landscape\Shaders\HeightBlendNormalx5.shader" />
