@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Item\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterPanel.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterViewer.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Controller\Game\DestinationController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\RoleController.cs" />
+    <Compile Include="Assets\Scripts\Controller\Game\TimeDropController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\GameSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\InitSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\LoadingSceneController.cs" />

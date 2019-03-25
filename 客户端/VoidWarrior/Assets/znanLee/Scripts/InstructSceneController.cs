@@ -40,13 +40,13 @@ public class InstructSceneController : MonoBehaviour {
         objMainPlayer = GameObject.Instantiate(objMainPlayer);
         RoleController mainPlayerCtrl = objMainPlayer.GetComponent<RoleController>();
         mainPlayerCtrl.Init(RoleType.MainPlayer,
-                            new RoleInfo(true),
+                            new RoleInfo(true, 100, 10),
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
         //加载怪物
         LoadMonster(m_MonsterBornPos1,path1);
-        LoadMonster(m_MonsterBornPos2, path2);
-        LoadMonster(m_MonsterBornPos3, path3);
+        //LoadMonster(m_MonsterBornPos2, path2);
+        //LoadMonster(m_MonsterBornPos3, path3);
         #endregion
     }
 
@@ -56,8 +56,8 @@ public class InstructSceneController : MonoBehaviour {
         objMonster.transform.position = transform.position;
         GameObject obj = GameObject.Instantiate(objMonster);
         RoleController monsterCtrl = obj.GetComponent<RoleController>();
-        monsterCtrl.Init(RoleType.Monster,
-                         new RoleInfo(true),
+        monsterCtrl.Init(RoleType.TimeMonster,
+                         new RoleInfo(true, 100, 3, 10),
                          new InstructMonsterAI(obj.GetComponent<RoleController>()));
     }
 

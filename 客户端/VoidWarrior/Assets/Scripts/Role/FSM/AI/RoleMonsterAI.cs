@@ -84,7 +84,7 @@ public class RoleMonsterAI : IRoleAI
                                                           currRoleCtrl.lockEnemy.transform.position.y + 0.1f,
                                                           currRoleCtrl.lockEnemy.transform.position.z));
                         //锁定敌人的受到伤害方法
-                        currRoleCtrl.lockEnemy.ToDamage(Vector3.zero);
+                        currRoleCtrl.lockEnemy.ToDamage(Vector3.zero, currRoleCtrl.currRoleInfo.Attack);
                     }
                 }
             }

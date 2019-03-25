@@ -35,7 +35,7 @@ public class GameSceneController : MonoBehaviour
         objMainPlayer = GameObject.Instantiate(objMainPlayer);
         RoleController mainPlayerCtrl = objMainPlayer.GetComponent<RoleController>();
         mainPlayerCtrl.Init(RoleType.MainPlayer, 
-                            new RoleInfo(true),
+                            new RoleInfo(true, 100, 10),
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
         //加载怪物
@@ -44,12 +44,12 @@ public class GameSceneController : MonoBehaviour
         GameObject objMonster1 = GameObject.Instantiate(objMonster);
         GameObject objMonster2 = GameObject.Instantiate(objMonster);
         RoleController monsterCtrl = objMonster1.GetComponent<RoleController>();
-        monsterCtrl.Init(RoleType.Monster, 
-                         new RoleInfo(true), 
+        monsterCtrl.Init(RoleType.TimeMonster, 
+                         new RoleInfo(true, 100, 3, 10), 
                          new RoleMonsterAI(objMonster1.GetComponent<RoleController>()));
         monsterCtrl = objMonster2.GetComponent<RoleController>();
-        monsterCtrl.Init(RoleType.Monster,
-                         new RoleInfo(true),
+        monsterCtrl.Init(RoleType.TimeMonster,
+                         new RoleInfo(true, 100, 3, 10),
                          new RoleMonsterAI(objMonster2.GetComponent<RoleController>()));
     }
     #endregion

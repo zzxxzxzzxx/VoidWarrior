@@ -37,6 +37,9 @@ public class BulletController : MonoBehaviour
     /// 获取MeshRenderer的material
     /// </summary>
     private Material material;
+    /// 子弹伤害
+    /// </summary>
+    public int damage = 0;
     #endregion
 
     #region 游戏流程
@@ -63,7 +66,7 @@ public class BulletController : MonoBehaviour
     {
         if (other.tag.Equals("Monster")) //攻击到怪物
         {
-            other.GetComponent<RoleController>().ToDamage(transform.forward);
+            other.GetComponent<RoleController>().ToDamage(transform.forward, damage);
         }
         GameObject.Instantiate(explosionEffect, transform.position, transform.rotation); //产生爆炸粒子特效
         GameFacade.Instance.PlayNormalSound(AudioManager.Sound_Explosion); //播放爆炸声音
