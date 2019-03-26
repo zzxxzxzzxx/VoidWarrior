@@ -79,6 +79,11 @@ public class RoleController : MonoBehaviour
     /// 游戏控制器
     /// </summary>
     private GameController gameController;
+
+    /// <summary>
+    /// 死亡标记
+    /// </summary>
+    private bool deadFlag = true;
     #endregion
 
     #region 游戏流程
@@ -156,7 +161,6 @@ public class RoleController : MonoBehaviour
                     //主角攻击
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Debug.Log("fire");
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hitInfo;
                         if (Physics.Raycast(ray, out hitInfo))
@@ -176,7 +180,7 @@ public class RoleController : MonoBehaviour
             #endregion
 
             #region 怪物
-            if (currRoleType.Equals(RoleType.Monster))
+            if (currRoleType.Equals(RoleType.TimeMonster))
             {
                 agent.speed += 0.01f; //随时间加快速度
             }
@@ -224,7 +228,6 @@ public class RoleController : MonoBehaviour
                     //主角攻击
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Debug.Log("fire");
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hitInfo;
                         if (Physics.Raycast(ray, out hitInfo))
@@ -234,19 +237,30 @@ public class RoleController : MonoBehaviour
                     }
                 }
 
-                if (!currRoleInfo.IsAlive) //主角死亡
+                if (!currRoleInfo.IsAlive && deadFlag) //主角死亡
                 {
                     ToDie(); //死亡动画
                     gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    deadFlag = false;
                     StartCoroutine(GameOver()); //转到游戏结束
                 }
             }
             #endregion
 
             #region 怪物
-            if (currRoleType.Equals(RoleType.Monster))
+            if (currRoleType.Equals(RoleType.TimeMonster))
             {
-                agent.speed += 0.01f; //随时间加快速度
+                if (!currRoleInfo.IsAlive && deadFlag) //怪物死亡
+                {
+                    ToDie(); //死亡动画
+                    gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    gameController.AddScore(currRoleInfo.Score); //增加分数
+                    string url = "Item/Gems Ultimate Pack/Prefabs/TimeDrop";
+                    GameObject objTimeDrop = Resources.Load(url + new System.Random().Next(1, 17)) as GameObject;
+                    objTimeDrop.transform.position = transform.position;
+                    GameObject.Instantiate(objTimeDrop);
+                    deadFlag = false;
+                }
             }
             #endregion
         }
@@ -335,22 +349,24 @@ public class RoleController : MonoBehaviour
     /// 受到伤害的方法
     /// </summary>
     /// <param name="direction">受到伤害的方向</param>
-    public void ToDamage(Vector3 direction)
+    public void ToDamage(Vector3 direction, int damage)
     {
+        if (!currRoleInfo.IsAlive) return;
+
         agent.isStopped = true; //navigation停止寻路
 
-        if (currRoleType.Equals(RoleType.Monster) && 
+        if (currRoleType.Equals(RoleType.TimeMonster) && 
             !Animator.GetCurrentAnimatorStateInfo(0).IsName(RoleAnimatorName.Attack.ToString())) //怪物受到伤害显示
         {
             currRoleFSMMng.ChangeState(RoleState.Damage);
             direction = direction.normalized;
             transform.LookAt(transform.position - direction); //看向受到伤害的方向
-            StartCoroutine(MonsterToDamageCoroutine(direction)); //延时显示
+            StartCoroutine(MonsterToDamageCoroutine(direction, damage)); //延时显示
         }
 
         if (currRoleType.Equals(RoleType.MainPlayer)) //主角收到伤害显示
         {
-            StartCoroutine(MainPlayerToDamageCoroutine()); //延时显示
+            StartCoroutine(MainPlayerToDamageCoroutine(damage)); //延时显示
         }
     }
     #endregion
@@ -375,6 +391,7 @@ public class RoleController : MonoBehaviour
     private void Shoot()
     {
         GameObject obj = GameObject.Instantiate(bulletPrefab); //实例化子弹
+        obj.GetComponent<BulletController>().damage = currRoleInfo.Attack;
         obj.transform.position = muzzleTrans.position; //位置为枪口位置
         obj.transform.rotation = Quaternion.LookRotation(TargetPos - transform.position, Vector3.up); //方向为枪口方向
         GameFacade.Instance.PlayNormalSound(AudioManager.Sound_Shoot); //发出射击的声音
@@ -438,7 +455,7 @@ public class RoleController : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         //更新游戏状态，显示相应UI
-        GameFacade.Instance.currentGameState = GameStateType.Defeat; 
+        GameFacade.Instance.currentGameState = GameStateType.GameOver; 
         GameFacade.Instance.gameUIUpdate = false;
     }
 
@@ -446,10 +463,11 @@ public class RoleController : MonoBehaviour
     /// 主角受到伤害协程
     /// </summary>
     /// <returns></returns>
-    private IEnumerator MainPlayerToDamageCoroutine()
+    private IEnumerator MainPlayerToDamageCoroutine(int damage)
     {
         yield return new WaitForSeconds(1.5f);
-        currRoleInfo.IsAlive = false; //直接死亡
+        currRoleInfo.HealthPoint -= damage;
+        if (currRoleInfo.HealthPoint <= 0) currRoleInfo.IsAlive = false; //直接死亡
     }
 
 
@@ -458,9 +476,8 @@ public class RoleController : MonoBehaviour
     /// </summary>
     /// <param name="direction">受到伤害方向</param>
     /// <returns></returns>
-    private IEnumerator MonsterToDamageCoroutine(Vector3 direction)
+    private IEnumerator MonsterToDamageCoroutine(Vector3 direction, int damage)
     {
-        gameController.AddScore(); //增加分数
         //向后击退
         float endTime = Time.time + 1f; 
         while (Time.time < endTime)
@@ -468,6 +485,8 @@ public class RoleController : MonoBehaviour
             transform.Translate(direction * Time.deltaTime, Space.World);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        currRoleInfo.HealthPoint -= damage;
+        if (currRoleInfo.HealthPoint <= 0) currRoleInfo.IsAlive = false; //直接死亡
     }
     #endregion
 }

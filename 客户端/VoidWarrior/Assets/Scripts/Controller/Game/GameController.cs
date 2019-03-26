@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
             }
             else if (timeCountDown <= 0)
             {
-                ToGameDefeat();
+                ToGameOver();
             }
             else
             {
@@ -80,16 +80,22 @@ public class GameController : MonoBehaviour
 
         }
 
-        if (!GameFacade.Instance.gameUIUpdate &&
-            GameFacade.Instance.currentGameState.Equals(GameStateType.Victory))
-        {
-            ToGameVictory();
-        }
+        //if (!GameFacade.Instance.gameUIUpdate &&
+        //    GameFacade.Instance.currentGameState.Equals(GameStateType.Victory))
+        //{
+        //    ToGameVictory();
+        //}
+
+        //if (!GameFacade.Instance.gameUIUpdate &&
+        //    GameFacade.Instance.currentGameState.Equals(GameStateType.Defeat))
+        //{
+        //    ToGameDefeat();
+        //}
 
         if (!GameFacade.Instance.gameUIUpdate &&
-            GameFacade.Instance.currentGameState.Equals(GameStateType.Defeat))
+            GameFacade.Instance.currentGameState.Equals(GameStateType.GameOver))
         {
-            ToGameDefeat();
+            ToGameOver();
         }
 
     }
@@ -99,10 +105,18 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// 增加分数
     /// </summary>
-    public void AddScore()
+    public void AddScore(int score)
     {
-        score++;
+        this.score += score;
         gamePanel.SetScoreText(score.ToString()); //改变ui
+    }
+    /// <summary>
+    /// 增加分数
+    /// </summary>
+    public void AddTime(int time)
+    {
+        timeCountDown += time;
+        gamePanel.SetTimeText(timeCountDown.ToString()); //改变ui
     }
     #endregion
 

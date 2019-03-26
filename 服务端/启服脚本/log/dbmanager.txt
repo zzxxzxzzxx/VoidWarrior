@@ -36,3 +36,53 @@
   user_name varchar(30),
   score int(11),
   P' at line 1
+[2019-03-22 20:22:13] 创建数据表rank
+[2019-03-22 20:22:13] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-23 15:22:31] 创建数据表rank
+[2019-03-23 15:22:31] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-23 20:34:26] 创建数据表rank
+[2019-03-23 20:34:26] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-23 22:02:37] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[2019-03-23 23:49:54] 创建数据表rank
+[2019-03-23 23:49:54] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-24 14:20:03] 创建数据表rank
+[2019-03-24 14:20:03] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-25 14:24:07] 创建数据表rank
+[2019-03-25 14:24:07] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-25 14:27:32] 创建数据表rank
+[2019-03-25 14:27:32] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1

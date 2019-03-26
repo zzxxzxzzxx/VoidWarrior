@@ -16,11 +16,15 @@ public class InstructSceneController : MonoBehaviour {
     /// <summary>
     /// 怪物出生点
     /// </summary>
-   // [SerializeField]
-    //private Transform m_MonsterBornPos1;
-   // private Transform m_MonsterBornPos2;
-   // private Transform m_MonsterBornPos3;
-
+    [SerializeField]
+    private Transform m_MonsterBornPos1;
+    [SerializeField]
+    private Transform m_MonsterBornPos2;
+    [SerializeField]
+    private Transform m_MonsterBornPos3;
+    private string path1 = "Prefabs/Role/Prefabs/Role_Monster";
+    private string path2 = "Prefabs/Role/Prefabs/Role_Monster2";
+    private string path3 = "Prefabs/Role/Prefabs/Role_Monster3";
     #region 游戏流程
     void Awake()
     {
@@ -36,22 +40,25 @@ public class InstructSceneController : MonoBehaviour {
         objMainPlayer = GameObject.Instantiate(objMainPlayer);
         RoleController mainPlayerCtrl = objMainPlayer.GetComponent<RoleController>();
         mainPlayerCtrl.Init(RoleType.MainPlayer,
-                            new RoleInfo(true),
+                            new RoleInfo(true, 100, 10),
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
-        ////加载怪物
-        //GameObject objMonster = Resources.Load("Prefabs/Role/Prefabs/Role_Monster") as GameObject;
-        //objMonster.transform.position = m_MonsterBornPos.position;
-        //GameObject objMonster1 = GameObject.Instantiate(objMonster);
-        //GameObject objMonster2 = GameObject.Instantiate(objMonster);
-        //RoleController monsterCtrl = objMonster1.GetComponent<RoleController>();
-        //monsterCtrl.Init(RoleType.Monster,
-        //                 new RoleInfo(true),
-        //                 new RoleMonsterAI(objMonster1.GetComponent<RoleController>()));
-        //monsterCtrl = objMonster2.GetComponent<RoleController>();
-        //monsterCtrl.Init(RoleType.Monster,
-        //                 new RoleInfo(true),
-        //                 new RoleMonsterAI(objMonster2.GetComponent<RoleController>()));
+        //加载怪物
+        LoadMonster(m_MonsterBornPos1,path1);
+        //LoadMonster(m_MonsterBornPos2, path2);
+        //LoadMonster(m_MonsterBornPos3, path3);
+        #endregion
     }
-    #endregion
+
+    private void LoadMonster(Transform transform, string path)
+    {
+        GameObject objMonster = Resources.Load(path.ToString()) as GameObject;
+        objMonster.transform.position = transform.position;
+        GameObject obj = GameObject.Instantiate(objMonster);
+        RoleController monsterCtrl = obj.GetComponent<RoleController>();
+        monsterCtrl.Init(RoleType.TimeMonster,
+                         new RoleInfo(true, 100, 3, 10),
+                         new InstructMonsterAI(obj.GetComponent<RoleController>()));
+    }
+
 }

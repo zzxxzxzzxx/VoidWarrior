@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Item\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterPanel.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterViewer.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Controller\Game\DestinationController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\RoleController.cs" />
+    <Compile Include="Assets\Scripts\Controller\Game\TimeDropController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\GameSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\InitSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\LoadingSceneController.cs" />
@@ -123,19 +125,21 @@
     <Compile Include="Assets\Scripts\UI\UIPanel\RegistePanel.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructControl.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructController.cs" />
+    <Compile Include="Assets\znanLee\Scripts\InstructMonsterAI.cs" />
     <Compile Include="Assets\znanLee\Scripts\InstructSceneController.cs" />
-    <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendNormalx5.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Diffuse fade.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Bump fade addpass.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\custom terrain Bump fade.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\Terrain Shader\AddOn1\4x UV_Mixing.shader" />
+    <Compile Include="Assets\znanLee\Scripts\Skeleton2Controller.cs" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\HeightBlendNormalx5.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\custom terrain Diffuse fade.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\custom terrain Bump fade addpass.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\custom terrain Bump fade.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\Terrain Shader\AddOn1\4x UV_Mixing.shader" />
     <None Include="Assets\Resources\Prefabs\Role\Yurowm\Shaders\SkinShader.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendx5.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\Terrain Shader\AddOn2\custom terrain Bump fade 4x smooth.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\custom terrain fade addpass.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\HeightBlendx5.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\Terrain Shader\AddOn2\custom terrain Bump fade 4x smooth.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\custom terrain fade addpass.shader" />
     <None Include="Assets\JsonDotNet\link.xml" />
-    <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendSpecularx4.shader" />
-    <None Include="Assets\znanLee\Landscape\Shaders\HeightBlendRGB.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\HeightBlendSpecularx4.shader" />
+    <None Include="Assets\znanLee\Sprite\Landscape\Shaders\HeightBlendRGB.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>F:/unity/mygit/VoidWarrior/客户端/VoidWarrior/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -44,9 +44,9 @@ public class RoleMonsterAI : IRoleAI
     {
         currRoleCtrl = roleCtrl;
         patrolPoint = new Vector3[3];
-        patrolPoint[0] = new Vector3(80, 6.28f, 60);
-        patrolPoint[1] = new Vector3(80, 6.28f, 80);
-        patrolPoint[2] = new Vector3(70, 6.28f, 75);
+        patrolPoint[0] = new Vector3(80, .28f, 60);
+        patrolPoint[1] = new Vector3(80, .28f, 80);
+        patrolPoint[2] = new Vector3(70, .28f, 75);
         currPoint = Random.Range(0, 3);
     }
     #endregion
@@ -61,6 +61,7 @@ public class RoleMonsterAI : IRoleAI
     #region 提供的方法
     public void DoAI()
     {
+
         if (currRoleCtrl.currRoleFSMMng.CurrRoleStateEnum.Equals(RoleState.Run) || //在跑步状态或者等待状态才会执行
             currRoleCtrl.currRoleFSMMng.CurrRoleStateEnum.Equals(RoleState.Idle))
         {
@@ -83,7 +84,7 @@ public class RoleMonsterAI : IRoleAI
                                                           currRoleCtrl.lockEnemy.transform.position.y + 0.1f,
                                                           currRoleCtrl.lockEnemy.transform.position.z));
                         //锁定敌人的受到伤害方法
-                        currRoleCtrl.lockEnemy.ToDamage(Vector3.zero);
+                        currRoleCtrl.lockEnemy.ToDamage(Vector3.zero, currRoleCtrl.currRoleInfo.Attack);
                     }
                 }
             }

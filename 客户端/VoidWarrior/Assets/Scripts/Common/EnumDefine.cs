@@ -65,7 +65,12 @@ public enum GameStateType
     /// <summary>
     /// 游戏失败状态
     /// </summary>
-    Defeat
+    Defeat,
+
+    /// <summary>
+    /// 游戏结束状态
+    /// </summary>
+    GameOver
 }
 #endregion
 
@@ -212,7 +217,7 @@ public enum RoleType
     /// <summary>
     /// 怪
     /// </summary>
-    Monster = 2
+    TimeMonster = 2
 }
 #endregion
 
