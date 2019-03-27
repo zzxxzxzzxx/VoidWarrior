@@ -7,7 +7,7 @@ public class TimeDropController : MonoBehaviour
     /// <summary>
     /// 游戏控制器
     /// </summary>
-    private GameController gameController;
+    private MainGameController gameController;
 
     /// <summary>
     /// 增加的时间
@@ -19,7 +19,7 @@ public class TimeDropController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            gameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
             //改变游戏状态
             gameController.AddTime(addTime);
             GameObject.Destroy(this.gameObject); //销毁自身游戏物体

@@ -78,7 +78,7 @@ public class RoleController : MonoBehaviour
     /// <summary>
     /// 游戏控制器
     /// </summary>
-    private GameController gameController;
+    private MainGameController mainGameController;
 
     /// <summary>
     /// 死亡标记
@@ -90,7 +90,7 @@ public class RoleController : MonoBehaviour
     void Start ()
     {
         //获取游戏控制器
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
         agent = GetComponent<NavMeshAgent>(); //获取网格导航组件
         //获取摄像机控制器
         GameFacade.Instance.GetCamera(GameObject.Find("CameraFollowAndRotate").GetComponent<CameraController>());
@@ -205,7 +205,8 @@ public class RoleController : MonoBehaviour
             #region 主角
             if (currRoleType.Equals(RoleType.MainPlayer))
             {
-                if (currRoleInfo.IsAlive && !EventSystem.current.IsPointerOverGameObject())
+                if (currRoleInfo.IsAlive //&& !EventSystem.current.IsPointerOverGameObject()
+                    )
                 {
                     //主角移动
                     if (Input.GetKey(KeyCode.A))
@@ -254,10 +255,10 @@ public class RoleController : MonoBehaviour
                 {
                     ToDie(); //死亡动画
                     gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
-                    gameController.AddScore(currRoleInfo.Score); //增加分数
+                    mainGameController.AddScore(currRoleInfo.Score); //增加分数
                     string url = "Item/Gems Ultimate Pack/Prefabs/TimeDrop";
                     GameObject objTimeDrop = Resources.Load(url + new System.Random().Next(1, 17)) as GameObject;
-                    objTimeDrop.transform.position = transform.position;
+                    objTimeDrop.transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
                     GameObject.Instantiate(objTimeDrop);
                     deadFlag = false;
                 }
@@ -466,6 +467,7 @@ public class RoleController : MonoBehaviour
     private IEnumerator MainPlayerToDamageCoroutine(int damage)
     {
         yield return new WaitForSeconds(1.5f);
+        currRoleFSMMng.ChangeState(RoleState.Damage);
         currRoleInfo.HealthPoint -= damage;
         if (currRoleInfo.HealthPoint <= 0) currRoleInfo.IsAlive = false; //直接死亡
     }
