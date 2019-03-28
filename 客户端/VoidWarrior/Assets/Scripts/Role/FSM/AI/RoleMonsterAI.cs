@@ -75,7 +75,7 @@ public class RoleMonsterAI : IRoleAI
                 }
                 else
                 {
-                    currRoleCtrl.MoveTo(currRoleCtrl.lockEnemy.transform.position); //追击
+                    currRoleCtrl.MoveTo(currRoleCtrl.lockEnemy.agent.destination); //追击
                     //距离到达可攻击范围
                     if (distance < monsterAttackRange)
                     {

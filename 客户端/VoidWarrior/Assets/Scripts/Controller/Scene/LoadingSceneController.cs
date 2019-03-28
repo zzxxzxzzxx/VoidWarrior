@@ -78,7 +78,7 @@ public class LoadingSceneController : MonoBehaviour
         switch (GameFacade.Instance.currentSceneType)
         {
             case SceneType.Game:
-                strSceneName = "Scene_MainGame";
+                strSceneName = "Scene_ChasingGame";
                 break;
             case SceneType.Menu:
                 strSceneName = "Scene_Menu";

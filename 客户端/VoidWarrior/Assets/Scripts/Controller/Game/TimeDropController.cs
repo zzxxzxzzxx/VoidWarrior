@@ -21,7 +21,8 @@ public class TimeDropController : MonoBehaviour
         {
             gameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
             //改变游戏状态
-            gameController.AddTime(addTime);
+            other.GetComponent<RoleController>().currRoleInfo.HealthPoint += addTime; //增加时间
+            gameController.AddTime(addTime); //增加生命
             GameObject.Destroy(this.gameObject); //销毁自身游戏物体
         }
     }

@@ -61,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Item\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Item\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterPanel.cs" />
     <Compile Include="Assets\Resources\Prefabs\Role\Yurowm\Demo\Scripts\CharacterViewer.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Controller\Game\MainGame\MainGameController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\RoleController.cs" />
     <Compile Include="Assets\Scripts\Controller\Game\TimeDropController.cs" />
+    <Compile Include="Assets\Scripts\Controller\Game\WeaponDropController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\GameSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\InitSceneController.cs" />
     <Compile Include="Assets\Scripts\Controller\Scene\LoadingSceneController.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\Scripts\Request\RegisteRequest.cs" />
     <Compile Include="Assets\Scripts\Request\SubmitRequest.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\AI\IRoleAI.cs" />
+    <Compile Include="Assets\Scripts\Role\FSM\AI\MainGameRoleMonsterAI.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\AI\RoleMainPlayerAI.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\AI\RoleMonsterAI.cs" />
     <Compile Include="Assets\Scripts\Role\FSM\RoleFSMMng.cs" />
