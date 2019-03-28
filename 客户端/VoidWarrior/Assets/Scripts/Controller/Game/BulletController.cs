@@ -45,6 +45,7 @@ public class BulletController : MonoBehaviour
     #region 游戏流程
     void Start ()
     {
+        gameObject.AddComponent<DestroyForTime>().time = 5;
         rgd = GetComponent<Rigidbody>(); //获取刚体组件
         holeStyleLight = holeStyle.GetComponent<Light>();
         material = GetComponent<MeshRenderer>().material;

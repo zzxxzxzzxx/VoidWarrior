@@ -27,7 +27,7 @@ public class RoleController : MonoBehaviour
     /// 子弹预设体
     /// </summary>
     [SerializeField]
-    private GameObject bulletPrefab;
+    public GameObject bulletPrefab;
 
     /// <summary>
     /// 移动的目标地点
@@ -74,11 +74,10 @@ public class RoleController : MonoBehaviour
     ///网格导航代理
     /// </summary>
     public NavMeshAgent agent;
-
     /// <summary>
     /// 游戏控制器
     /// </summary>
-    private GameController gameController;
+    private MainGameController mainGameController;
 
     /// <summary>
     /// 死亡标记
@@ -90,7 +89,7 @@ public class RoleController : MonoBehaviour
     void Start ()
     {
         //获取游戏控制器
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
         agent = GetComponent<NavMeshAgent>(); //获取网格导航组件
         //获取摄像机控制器
         GameFacade.Instance.GetCamera(GameObject.Find("CameraFollowAndRotate").GetComponent<CameraController>());
@@ -187,8 +186,6 @@ public class RoleController : MonoBehaviour
             #endregion
         }
 
-
-
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming)) //游戏状态为游戏中才执行
         {
             ////如果角色没有AI，直接返回
@@ -205,7 +202,8 @@ public class RoleController : MonoBehaviour
             #region 主角
             if (currRoleType.Equals(RoleType.MainPlayer))
             {
-                if (currRoleInfo.IsAlive && !EventSystem.current.IsPointerOverGameObject())
+                if (currRoleInfo.IsAlive //&& !EventSystem.current.IsPointerOverGameObject()
+                    )
                 {
                     //主角移动
                     if (Input.GetKey(KeyCode.A))
@@ -253,13 +251,34 @@ public class RoleController : MonoBehaviour
                 if (!currRoleInfo.IsAlive && deadFlag) //怪物死亡
                 {
                     ToDie(); //死亡动画
-                    gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
-                    gameController.AddScore(currRoleInfo.Score); //增加分数
-                    string url = "Item/Gems Ultimate Pack/Prefabs/TimeDrop";
-                    GameObject objTimeDrop = Resources.Load(url + new System.Random().Next(1, 17)) as GameObject;
-                    objTimeDrop.transform.position = transform.position;
-                    GameObject.Instantiate(objTimeDrop);
                     deadFlag = false;
+                    gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    mainGameController.AddScore(currRoleInfo.Score); //增加分数
+                    if (UnityEngine.Random.Range(1, 8) > 3)
+                    {
+                        string url = "Prefabs/Item/Gems Ultimate Pack/Prefabs/TimeDrop";
+                        GameObject objTimeDrop = Resources.Load(url + new System.Random().Next(1, 17)) as GameObject;
+                        objTimeDrop.transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+                        GameObject.Instantiate(objTimeDrop);
+                    }
+                }
+            }
+
+            if (currRoleType.Equals(RoleType.WeaponMonster))
+            {
+                if (!currRoleInfo.IsAlive && deadFlag) //怪物死亡
+                {
+                    ToDie(); //死亡动画
+                    deadFlag = false;
+                    gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    mainGameController.AddScore(currRoleInfo.Score); //增加分数
+                    if (UnityEngine.Random.Range(1, 8) > 3)
+                    {
+                        string url = "Prefabs/Item/Fantasy Chests PBR/Prefabs/Mesh_Chest_01_Mobile";
+                        GameObject objWeaponDrop = Resources.Load(url) as GameObject;
+                        objWeaponDrop.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                        GameObject.Instantiate(objWeaponDrop);
+                    }
                 }
             }
             #endregion
@@ -290,16 +309,16 @@ public class RoleController : MonoBehaviour
     /// FSM状态机转换到移动动画，并移动
     /// </summary>
     /// <param name="targetPos">移动位置</param>
-    public void MoveTo(Vector3 targetPos)
+    public bool MoveTo(Vector3 targetPos)
     {
         TargetPos = targetPos;
         //如果目标点不是原点，移动
-        if (TargetPos == Vector3.zero) return;
+        if (TargetPos == Vector3.zero) return false;
 
-        if (Time.time < moveTime + 1) return; //移动时间标记
+        if (Time.time < moveTime + 1) return true; //移动时间标记
         currRoleFSMMng.ChangeState(RoleState.Run);
-        agent.SetDestination(targetPos); //网格导航自动寻路
         moveTime = Time.time; //更新时间标记
+        return agent.SetDestination(targetPos); //网格导航自动寻路
     }
 
     /// <summary>
@@ -355,7 +374,8 @@ public class RoleController : MonoBehaviour
 
         agent.isStopped = true; //navigation停止寻路
 
-        if (currRoleType.Equals(RoleType.TimeMonster) && 
+        if (currRoleType.Equals(RoleType.TimeMonster) || 
+            currRoleType.Equals(RoleType.WeaponMonster) && 
             !Animator.GetCurrentAnimatorStateInfo(0).IsName(RoleAnimatorName.Attack.ToString())) //怪物受到伤害显示
         {
             currRoleFSMMng.ChangeState(RoleState.Damage);
@@ -466,8 +486,13 @@ public class RoleController : MonoBehaviour
     private IEnumerator MainPlayerToDamageCoroutine(int damage)
     {
         yield return new WaitForSeconds(1.5f);
+        currRoleFSMMng.ChangeState(RoleState.Damage);
         currRoleInfo.HealthPoint -= damage;
-        if (currRoleInfo.HealthPoint <= 0) currRoleInfo.IsAlive = false; //直接死亡
+        if (currRoleInfo.HealthPoint <= 0)
+        {
+            currRoleFSMMng.ChangeState(RoleState.Die);
+            currRoleInfo.IsAlive = false; //直接死亡
+        }
     }
 
 

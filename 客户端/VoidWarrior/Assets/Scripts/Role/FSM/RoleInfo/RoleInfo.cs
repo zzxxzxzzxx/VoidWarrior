@@ -39,6 +39,6 @@ public class RoleInfo
     /// <summary>
     /// 怪物奖励分数
     /// </summary>
-    public int Score { get; set; }
+    public int Score { get; private set; }
     #endregion
 }

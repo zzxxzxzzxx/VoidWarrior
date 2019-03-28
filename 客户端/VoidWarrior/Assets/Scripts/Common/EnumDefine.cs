@@ -215,9 +215,14 @@ public enum RoleType
     MainPlayer = 1,
 
     /// <summary>
-    /// 怪
+    /// 掉落加时间的怪
     /// </summary>
-    TimeMonster = 2
+    TimeMonster = 2,
+
+    /// <summary>
+    /// 掉落武器的怪
+    /// </summary>
+    WeaponMonster = 3
 }
 #endregion
 

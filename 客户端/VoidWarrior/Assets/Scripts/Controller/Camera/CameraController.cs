@@ -60,6 +60,12 @@ public class CameraController : MonoBehaviour
     /// 上一次隐藏的游戏物体
     /// </summary>
     private GameObject lastobj;
+
+    /// <summary>
+    /// 旋转速度
+    /// </summary>
+    [SerializeField]
+    private float speed = 500;
     #endregion
 
     #region 游戏流程
@@ -172,7 +178,7 @@ public class CameraController : MonoBehaviour
     /// <param name="type">0=左旋 1=右旋</param> (type == 0 ? 1 : -1)
     public void SetCameraRotate(float speed)
     {
-        transform.Rotate(0, speed * 80 * Time.deltaTime, 0);
+        transform.Rotate(0, speed * this.speed * Time.deltaTime, 0);
     }
 
     /// <summary>
@@ -181,8 +187,8 @@ public class CameraController : MonoBehaviour
     /// <param name="type">0=上旋 1=下旋</param>
     public void SetCameraUpAndDown(float speed)
     {
-        m_CameraUpAndDown.Rotate(0, 0, speed * 80 * Time.deltaTime);
-        m_CameraUpAndDown.localEulerAngles = new Vector3(0, 0, Mathf.Clamp(m_CameraUpAndDown.localEulerAngles.z, 35f, 80f));
+        m_CameraUpAndDown.Rotate(0, 0, speed * this.speed * Time.deltaTime);
+        m_CameraUpAndDown.localEulerAngles = new Vector3(0, 0, Mathf.Clamp(m_CameraUpAndDown.localEulerAngles.z, 10f, 80f));
     }
 
     /// <summary>
