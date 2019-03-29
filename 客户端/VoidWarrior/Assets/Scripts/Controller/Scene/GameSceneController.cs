@@ -38,19 +38,21 @@ public class GameSceneController : MonoBehaviour
                             new RoleInfo(true, 100, 10),
                             new RoleMainPlayerAI(objMainPlayer.GetComponent<RoleController>()));
 
+
         //加载怪物
-        GameObject objMonster = Resources.Load("Prefabs/Role/Prefabs/Role_Monster") as GameObject;
+        GameObject objMonster = Resources.Load("Prefabs/Role/Prefabs/Role_Monster2") as GameObject;
         objMonster.transform.position = m_MonsterBornPos.position;
         GameObject objMonster1 = GameObject.Instantiate(objMonster);
         GameObject objMonster2 = GameObject.Instantiate(objMonster);
         RoleController monsterCtrl = objMonster1.GetComponent<RoleController>();
-        monsterCtrl.Init(RoleType.TimeMonster, 
-                         new RoleInfo(true, 100, 3, 10), 
+        monsterCtrl.Init(RoleType.TimeMonster,
+                         new RoleInfo(true, 100, 3, 10),
                          new RoleMonsterAI(objMonster1.GetComponent<RoleController>()));
         monsterCtrl = objMonster2.GetComponent<RoleController>();
         monsterCtrl.Init(RoleType.TimeMonster,
                          new RoleInfo(true, 100, 3, 10),
                          new RoleMonsterAI(objMonster2.GetComponent<RoleController>()));
+
     }
     #endregion
 }

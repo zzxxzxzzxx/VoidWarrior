@@ -61,7 +61,7 @@ public class RoleStateRun : RoleStateAbstract
         }
 
         //目标位置接近游戏物体位置
-        if (Vector3.Distance(CurrRoleFSMMng.CurrRoleCtrl.TargetPos, CurrRoleFSMMng.CurrRoleCtrl.transform.position) > 0.3f)
+        if (Vector3.Distance(CurrRoleFSMMng.CurrRoleCtrl.TargetPos, CurrRoleFSMMng.CurrRoleCtrl.transform.position) > 1f)
         {
             CurrRoleFSMMng.CurrRoleCtrl.agent.ResetPath();
             CurrRoleFSMMng.CurrRoleCtrl.agent.SetDestination(CurrRoleFSMMng.CurrRoleCtrl.TargetPos);

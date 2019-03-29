@@ -237,9 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  explosionEffect: {fileID: 1778893089540208, guid: 32b22fb98da22e249a54dfaa875a6a52,
+  explosionEffect: {fileID: 1778893089540208, guid: a9326631a8c1d034bb0f3aa6ebd43393,
     type: 2}
   holeStyle: {fileID: 1536482666619186}
+  damage: 0
 --- !u!135 &135538560436998444
 SphereCollider:
   m_ObjectHideFlags: 1

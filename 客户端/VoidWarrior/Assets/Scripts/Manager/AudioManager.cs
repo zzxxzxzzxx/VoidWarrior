@@ -76,13 +76,17 @@ public class AudioManager : BaseManager
     /// </summary>
     public override void OnInit()
     {
-        if (GameObject.Find("AudioSource(GameObject)") == null)
+        GameObject audio = GameObject.Find("AudioSource(GameObject)");
+        if (audio == null)
         {
             GameObject audioSourceGO = new GameObject("AudioSource(GameObject)"); //创建游戏物体AudioSource(GameObject)
             bgAudioSource = audioSourceGO.AddComponent<AudioSource>(); //给游戏物体附加背景声音
             normalAudioSource = audioSourceGO.AddComponent<AudioSource>(); //给游戏物体附加普通声音
+        } else
+        {
+            bgAudioSource = audio.GetComponents<AudioSource>()[0];
+            normalAudioSource = audio.GetComponents<AudioSource>()[1];
         }
-
         //PlaySound(bgAudioSource, LoadSound(Sound_MenuBackGround), 0.5f, true); //播放背景声音
     }
 

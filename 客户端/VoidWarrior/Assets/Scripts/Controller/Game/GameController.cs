@@ -108,7 +108,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int score)
     {
         this.score += score;
-        gamePanel.SetScoreText(score.ToString()); //改变ui
+        gamePanel.SetScoreText(this.score.ToString()); //改变ui
     }
     /// <summary>
     /// 增加分数
