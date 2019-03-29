@@ -7,7 +7,7 @@ public class WeaponDropController : MonoBehaviour
     /// <summary>
     /// 游戏控制器
     /// </summary>
-    private MainGameController gameController;
+    //private MainGameController gameController;
 
     /// <summary>
     /// 增加的时间
@@ -22,7 +22,7 @@ public class WeaponDropController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+            //gameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
             //改变游戏状态
             other.GetComponent<RoleController>().currRoleInfo.Attack += addAttack; //增加攻击力
             other.GetComponent<RoleController>().bulletPrefab = Resources.Load("Prefabs/Item/Bullet_Blue") as GameObject;

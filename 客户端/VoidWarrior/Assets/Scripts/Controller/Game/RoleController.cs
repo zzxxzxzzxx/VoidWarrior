@@ -78,7 +78,7 @@ public class RoleController : MonoBehaviour
     /// 游戏控制器
     /// </summary>
     private MainGameController mainGameController;
-
+    private InstructController instructController;
     /// <summary>
     /// 死亡标记
     /// </summary>
@@ -89,7 +89,8 @@ public class RoleController : MonoBehaviour
     void Start ()
     {
         //获取游戏控制器
-        mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+        //mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();  
+        setController();
         agent = GetComponent<NavMeshAgent>(); //获取网格导航组件
         //获取摄像机控制器
         GameFacade.Instance.GetCamera(GameObject.Find("CameraFollowAndRotate").GetComponent<CameraController>());
@@ -99,7 +100,17 @@ public class RoleController : MonoBehaviour
         currRoleFSMMng = new RoleFSMMng(this); //实例化该角色的FSM状态机
         ToIdle(); //初始化状态为等待
     }
-
+    void  setController()
+    {
+        if(GameFacade.Instance.currentSceneType.Equals(SceneType.Instruct))
+        {
+            instructController = GameObject.Find("InstructController").GetComponent<InstructController>();
+        }
+        else
+        {
+            mainGameController = GameObject.Find("MainGameController").GetComponent<MainGameController>();
+        }
+    }
     void Update()
     {
         if (currRoleType == RoleType.MainPlayer) //主角可控制摄像机视角
@@ -253,7 +264,7 @@ public class RoleController : MonoBehaviour
                     ToDie(); //死亡动画
                     deadFlag = false;
                     gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
-                    mainGameController.AddScore(currRoleInfo.Score); //增加分数
+                    addScore(currRoleInfo); //增加分数
                     if (UnityEngine.Random.Range(1, 8) > 3)
                     {
                         string url = "Prefabs/Item/Gems Ultimate Pack/Prefabs/TimeDrop";
@@ -271,7 +282,7 @@ public class RoleController : MonoBehaviour
                     ToDie(); //死亡动画
                     deadFlag = false;
                     gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
-                    mainGameController.AddScore(currRoleInfo.Score); //增加分数
+                    addScore(currRoleInfo); //增加分数
                     if (UnityEngine.Random.Range(1, 8) > 3)
                     {
                         string url = "Prefabs/Item/Fantasy Chests PBR/Prefabs/Mesh_Chest_01_Mobile";
@@ -284,7 +295,13 @@ public class RoleController : MonoBehaviour
             #endregion
         }
     }
-
+    void addScore(RoleInfo roleInfo)
+    {
+        if (GameFacade.Instance.currentSceneType.Equals(SceneType.Instruct))
+            instructController.AddScore(roleInfo.Score);
+        else if (GameFacade.Instance.currentSceneType.Equals(SceneType.Game))
+            mainGameController.AddScore(roleInfo.Score);
+    }
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Destination"))
@@ -374,8 +391,8 @@ public class RoleController : MonoBehaviour
 
         agent.isStopped = true; //navigation停止寻路
 
-        if (currRoleType.Equals(RoleType.TimeMonster) || 
-            currRoleType.Equals(RoleType.WeaponMonster) && 
+        if ((currRoleType.Equals(RoleType.TimeMonster) || 
+            currRoleType.Equals(RoleType.WeaponMonster)) && 
             !Animator.GetCurrentAnimatorStateInfo(0).IsName(RoleAnimatorName.Attack.ToString())) //怪物受到伤害显示
         {
             currRoleFSMMng.ChangeState(RoleState.Damage);

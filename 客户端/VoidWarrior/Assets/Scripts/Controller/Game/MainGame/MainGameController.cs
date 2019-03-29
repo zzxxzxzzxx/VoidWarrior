@@ -48,7 +48,7 @@ public class MainGameController : MonoBehaviour
             ToGameStart();
         }
 
-        if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming))
+        if (GameFacade.Instance.currentGameState.Equals(GameStateType.Gaming))         
         {
             if (!GameFacade.Instance.gameUIUpdate)
             {
@@ -161,10 +161,7 @@ public class MainGameController : MonoBehaviour
         }
 
         //更新游戏状态
-        if (GameFacade.Instance.currentSceneType == SceneType.Game)
-            GameFacade.Instance.currentGameState = GameStateType.Gaming;
-        else if (GameFacade.Instance.currentSceneType == SceneType.Instruct)
-            GameFacade.Instance.currentGameState = GameStateType.Teaching;
+        GameFacade.Instance.currentGameState = GameStateType.Gaming;
         GameFacade.Instance.gameUIUpdate = false;
     }
     #endregion

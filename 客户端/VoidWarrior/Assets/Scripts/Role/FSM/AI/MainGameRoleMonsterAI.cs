@@ -74,6 +74,7 @@ public class MainGameRoleMonsterAI : IRoleAI
                                                       currRoleCtrl.lockEnemy.transform.position.y + 0.1f,
                                                       currRoleCtrl.lockEnemy.transform.position.z));
                     //锁定敌人的受到伤害方法
+                    Debug.Log("attack");
                     currRoleCtrl.lockEnemy.ToDamage(Vector3.zero, currRoleCtrl.currRoleInfo.Attack);
                 }
             }
