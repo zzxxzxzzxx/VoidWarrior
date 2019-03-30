@@ -131,7 +131,7 @@ public class RoleController : MonoBehaviour
             #endregion
         }
 
-        //Teaching还需修改
+
         if (GameFacade.Instance.currentGameState.Equals(GameStateType.Teaching))
         {
             ////如果角色没有AI，直接返回
@@ -148,7 +148,8 @@ public class RoleController : MonoBehaviour
             #region 主角
             if (currRoleType.Equals(RoleType.MainPlayer))
             {
-                if (currRoleInfo.IsAlive && !EventSystem.current.IsPointerOverGameObject())
+                if (currRoleInfo.IsAlive //&& !EventSystem.current.IsPointerOverGameObject()
+                    )
                 {
                     //主角移动
                     if (Input.GetKey(KeyCode.A))
@@ -180,10 +181,11 @@ public class RoleController : MonoBehaviour
                     }
                 }
 
-                if (!currRoleInfo.IsAlive) //主角死亡
+                if (!currRoleInfo.IsAlive && deadFlag) //主角死亡
                 {
                     ToDie(); //死亡动画
                     gameObject.AddComponent<DestroyForTime>().time = 5; //销毁自身
+                    deadFlag = false;
                     StartCoroutine(GameOver()); //转到游戏结束
                 }
             }
@@ -192,7 +194,32 @@ public class RoleController : MonoBehaviour
             #region 怪物
             if (currRoleType.Equals(RoleType.TimeMonster))
             {
-                agent.speed += 0.01f; //随时间加快速度
+                if (!currRoleInfo.IsAlive && deadFlag) //怪物死亡
+                {
+                    ToDie(); //死亡动画
+                    deadFlag = false;
+                    gameObject.AddComponent<DestroyForTime>().time = 3; //销毁自身
+                    addScore(currRoleInfo); //增加分数
+                    string url = "Prefabs/Item/Gems Ultimate Pack/Prefabs/TimeDrop";
+                    GameObject objTimeDrop = Resources.Load(url + new System.Random().Next(1, 17)) as GameObject;
+                    objTimeDrop.transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+                    GameObject.Instantiate(objTimeDrop);
+                }
+            }
+
+            if (currRoleType.Equals(RoleType.WeaponMonster))
+            {
+                if (!currRoleInfo.IsAlive && deadFlag) //怪物死亡
+                {
+                    ToDie(); //死亡动画
+                    deadFlag = false;
+                    gameObject.AddComponent<DestroyForTime>().time = 3; //销毁自身
+                    addScore(currRoleInfo); //增加分数
+                    string url = "Prefabs/Item/Fantasy Chests PBR/Prefabs/Mesh_Chest_01_Mobile";
+                    GameObject objWeaponDrop = Resources.Load(url) as GameObject;
+                    objWeaponDrop.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    GameObject.Instantiate(objWeaponDrop);
+                }
             }
             #endregion
         }
@@ -325,7 +352,8 @@ public class RoleController : MonoBehaviour
     /// <summary>
     /// FSM状态机转换到移动动画，并移动
     /// </summary>
-    /// <param name="targetPos">移动位置</param>
+    /// <param name="tar
+    /// Pos">移动位置</param>
     public bool MoveTo(Vector3 targetPos)
     {
         TargetPos = targetPos;

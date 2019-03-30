@@ -20,13 +20,16 @@ public class InstructController : MonoBehaviour {
     /// </summary>
     private GamePanel gamePanel;
 
+    private InstructSceneController instructSceneController;
+    private InstructPanel instructPanel;
     #endregion
-
     #region 游戏流程
     private void Start()
     {
         GameObject obj = GameObject.Find("GamePanel(Clone)") as GameObject;
         gamePanel = obj.GetComponent<GamePanel>();
+        instructPanel = GameObject.Find("InstructPanel").GetComponent<InstructPanel>();
+        instructSceneController = GameObject.Find("InstructSceneController").GetComponent<InstructSceneController>();
     }
 
     private void Update()
@@ -44,13 +47,39 @@ public class InstructController : MonoBehaviour {
             {
                 ToTeaching();
             }
-            else
-            {
-                timeCountDown -= Time.deltaTime;
-                gamePanel.SetTimeText(((int)timeCountDown).ToString());
-            }
 
         }
+        switch (instructSceneController.Order)
+        {
+            case 1:
+                instructPanel.SetOrder(1);
+                break;
+            case 2:
+                instructPanel.SetOrder(2);
+                break;
+            case 3:
+                instructPanel.SetOrder(3);
+                break;
+            case 4:
+                instructPanel.SetOrder(4);
+                break;
+            case 5:
+                instructPanel.SetOrder(5);
+                break;
+            default :
+                break;
+        }
+
+        //if (instructSceneController.Order == 1)
+        //    instructPanel.SetOrder(1);
+        //else if (instructSceneController.Order == 2)
+        //    instructPanel.SetOrder(2);
+        //else if (instructSceneController.Order == 3)
+        //    instructPanel.SetOrder(3);
+        //else if (instructSceneController.Order == 4)
+        //    instructPanel.SetOrder(4);
+        //else if (instructSceneController.Order == 5)
+        //    instructPanel.SetOrder(5);
     }
     #endregion
 
@@ -82,15 +111,18 @@ public class InstructController : MonoBehaviour {
         score = 0; //分数重置
         gamePanel.SetScoreText(score.ToString()); //刷新ui
 
-        timeCountDown = 3; //倒计时设置
+        //timeCountDown = 3; //倒计时设置
 
         //按钮显示设置
         gamePanel.SetGameForgiveActive(false);
         gamePanel.SetGameOverActive(false);
 
         GameFacade.Instance.gameUIUpdate = true; //刷新标记更新
+        
+        //更新游戏状态
+        GameFacade.Instance.currentGameState = GameStateType.Teaching;
+        GameFacade.Instance.gameUIUpdate = false;
 
-        StartCoroutine(TimeCountDown()); //倒计时协程
     }
 
     /// <summary>
@@ -109,27 +141,6 @@ public class InstructController : MonoBehaviour {
         gamePanel.SetGameOverActive(false);
 
         GameFacade.Instance.gameUIUpdate = true;//刷新标记更新
-    }
-
-    #endregion
-
-    #region 协程
-    /// <summary>
-    /// 倒计时协程
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator TimeCountDown()
-    {
-        for (int timer = (int)timeCountDown; timer > 0; timer--)
-        {
-            GameFacade.Instance.ShowMessage(timer.ToString()); //倒计时显示
-            GameFacade.Instance.PlayNormalSound(AudioManager.Sound_Timer);
-            yield return new WaitForSeconds(2f);
-        }
-
-        //更新游戏状态
-        GameFacade.Instance.currentGameState = GameStateType.Teaching;
-        GameFacade.Instance.gameUIUpdate = false;
     }
     #endregion
 }
