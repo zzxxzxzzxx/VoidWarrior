@@ -8,6 +8,8 @@ TagManager:
   - Monster
   - Ground
   - Destination
+  - TimeDrop
+  - Chest
   layers:
   - Default
   - TransparentFX

@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 65527883082004398}
   m_Layer: 0
   m_Name: Mesh_Chest_01_Mobile
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1654766839871344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.491524, y: 5.1280737, z: 129.23691}
+  m_LocalPosition: {x: 106.835205, y: 0.17266391, z: 98.29269}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4405952128622052}

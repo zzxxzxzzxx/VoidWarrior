@@ -226,3 +226,150 @@
   user_name varchar(30),
   score int(11),
   P' at line 1
+[2019-03-29 20:46:31] 创建数据表rank
+[2019-03-29 20:46:31] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 22:02:33] 创建数据表rank
+[2019-03-29 22:02:33] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 22:16:06] 创建数据表rank
+[2019-03-29 22:16:06] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 22:28:14] 创建数据表rank
+[2019-03-29 22:28:14] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 22:43:50] 创建数据表rank
+[2019-03-29 22:43:50] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 23:18:11] 创建数据表rank
+[2019-03-29 23:18:11] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 23:37:15] 创建数据表rank
+[2019-03-29 23:37:15] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-29 23:46:38] 创建数据表rank
+[2019-03-29 23:46:38] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 10:40:08] 创建数据表rank
+[2019-03-30 10:40:09] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 10:44:47] 创建数据表rank
+[2019-03-30 10:44:47] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 10:45:09] 创建数据表rank
+[2019-03-30 10:45:09] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 10:47:34] 创建数据表rank
+[2019-03-30 10:47:34] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 10:59:41] 创建数据表rank
+[2019-03-30 10:59:41] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 11:11:34] 创建数据表rank
+[2019-03-30 11:11:34] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 11:26:43] 创建数据表rank
+[2019-03-30 11:26:43] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 11:36:33] 创建数据表rank
+[2019-03-30 11:36:33] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 11:44:17] 创建数据表rank
+[2019-03-30 11:44:17] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 11:54:43] 创建数据表rank
+[2019-03-30 11:54:43] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 12:10:37] 创建数据表rank
+[2019-03-30 12:10:37] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 13:14:41] 创建数据表rank
+[2019-03-30 13:14:41] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1
+[2019-03-30 13:44:52] 创建数据表rank
+[2019-03-30 13:44:52] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank
+(
+  rank_id int(11) NOT NULL,
+  user_name varchar(30),
+  score int(11),
+  P' at line 1

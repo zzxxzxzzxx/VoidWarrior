@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114344719188373216}
   m_Layer: 0
   m_Name: TimeDrop6
-  m_TagString: Untagged
+  m_TagString: TimeDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013105924406}
   m_LocalRotation: {x: -0.6412015, y: 0.109968245, z: 0.12836944, w: 0.7485245}
-  m_LocalPosition: {x: 59.956635, y: 11.283333, z: 104.39663}
+  m_LocalPosition: {x: 111.5097, y: 6.2842636, z: 86.223274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

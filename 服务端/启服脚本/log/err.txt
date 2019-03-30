@@ -265,3 +265,69 @@ Traceback (most recent call last):
 ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank' at line 1")
 ---------extra---------
 recvfail2
+[2019-03-29 20:48:50] ---------TraceErr---------
+Traceback (most recent call last):
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\demo.py", line 152, in OnSubmit
+    pubglobalmanager.CallManagerFunc("demo", "Submit", oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\demo.py", line 128, in Submit
+    rank.SubmitRecord(name, score) #å‘DAOä¸­æäº¤åˆ†æ•°
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\DAO\rankDAO.py", line 32, in SubmitRecord
+    result = pubglobalmanager.CallManagerFunc("dbctrl", "Query", sSql)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\dbctrl\manager.py", line 82, in Query
+    cursor.execute(sSql)
+  File "C:\Python27amd64\lib\site-packages\MySQLdb\cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27amd64\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank' at line 1")
+---------extra---------
+recvfail2
+[2019-03-30 11:53:54] ---------TraceErr---------
+Traceback (most recent call last):
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 36, in run
+    self.Recv(sData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 54, in Recv
+    self.OnCommand(dPackData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\clientsocket\clientobject.py", line 104, in OnCommand
+    commandctrl.OnCommand(self, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\commandctrl\__init__.py", line 15, in OnCommand
+    oManager.OnCommand(oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\mutexlock\__init__.py", line 18, in ___AutoLock
+    ret = func(*args, **kwargs)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\commandctrl\manager.py", line 54, in OnCommand
+    oFunc(oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\demo.py", line 152, in OnSubmit
+    pubglobalmanager.CallManagerFunc("demo", "Submit", oClient, dData)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\demo.py", line 128, in Submit
+    rank.SubmitRecord(name, score) #å‘DAOä¸­æäº¤åˆ†æ•°
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\DAO\rankDAO.py", line 32, in SubmitRecord
+    result = pubglobalmanager.CallManagerFunc("dbctrl", "Query", sSql)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\pubglobalmanager.py", line 30, in CallManagerFunc
+    return oFunc(*args)
+  File "F:\unity\mygit\VoidWarrior\·şÎñ¶Ë\code\dbctrl\manager.py", line 82, in Query
+    cursor.execute(sSql)
+  File "C:\Python27amd64\lib\site-packages\MySQLdb\cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27amd64\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank' at line 1")
+---------extra---------
+recvfail2
